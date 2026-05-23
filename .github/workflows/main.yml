@@ -49,10 +49,24 @@ jobs:
         
         # 2. 將指定的輸出資料夾（含所有多層子資料夾）加入暫存區
         # 假設您的輸出資料夾名稱叫 output，請依實際情況修改
-        git add log
-        git add storage
-        git add index.html
+        #git add log
+        #git add storage
+        #git add index.html
 
-        git commit -m "系統自動更新資料夾檔案"
-        git push origin main  --force
+        if [ -n "$(git status --porcelain)" ]; then
+          git add log
+          git add storage
+          git add index.html
+        
+          git commit -m "chore: 系統自動更新資料夾檔案 [skip ci]"
+          git pull --rebase origin main
+          git push origin main
+        else
+          echo "沒有偵測到任何檔案變更，跳過推送。"
+        fi
+        
+
+        #git pull origin main
+        #git commit -m "系統自動更新資料夾檔案"
+        #git push origin main  
        
