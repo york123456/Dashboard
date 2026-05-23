@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>情報典藏室 · 訂閱信件的策展式典藏 — 以智庫視角重新閱讀每一封來信</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:      #f4efe4;
+    --paper-2:    #ece5d6;
+    --card:       #fffdf8;
+    --ink:        #20242c;
+    --ink-soft:   #585c64;
+    --ink-faint:  #8c8b82;
+    --accent:     #8a2b2b;   /* 酒紅 */
+    --accent-2:   #9c7a3c;   /* 黃銅 */
+    --line:       rgba(32,36,44,.14);
+    --line-soft:  rgba(32,36,44,.07);
+    --shadow:     0 1px 2px rgba(32,36,44,.05), 0 14px 40px rgba(32,36,44,.07);
+    --serif:      "Noto Serif TC", "Newsreader", Georgia, "Songti TC", serif;
+    --display:    "Newsreader", "Noto Serif TC", Georgia, serif;
+    --sans:       "Noto Sans TC", -apple-system, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 18% -10%, rgba(156,122,60,.10), transparent 55%),
+      radial-gradient(circle at 100% 0%, rgba(138,43,43,.06), transparent 45%),
+      var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+  /* 細微紙張紋理 */
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    opacity: .035; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* ── 報頭 ─────────────────────────── */
+  header.masthead { text-align: center; padding: 56px 0 30px; }
+  .kicker {
+    font-family: var(--sans); font-weight: 500; font-size: 11.5px;
+    letter-spacing: .42em; text-transform: uppercase; color: var(--accent);
+    margin: 0 0 18px;
+  }
+  .masthead h1 {
+    font-family: var(--display); font-weight: 600; font-size: clamp(40px, 7vw, 78px);
+    line-height: .98; letter-spacing: -.015em; margin: 0;
+    color: var(--ink);
+  }
+  .masthead h1 .tc { font-family: var(--serif); font-weight: 900; }
+  .rule {
+    display: flex; align-items: center; gap: 16px;
+    max-width: 560px; margin: 22px auto 16px; color: var(--ink-faint);
+  }
+  .rule::before, .rule::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .rule span { font-size: 11px; letter-spacing: .3em; text-transform: uppercase; }
+  .masthead p.sub {
+    font-family: var(--serif); font-style: italic; color: var(--ink-soft);
+    font-size: clamp(15px, 2vw, 18px); max-width: 620px; margin: 0 auto;
+  }
+
+  /* ── 統計列 ───────────────────────── */
+  .stats {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0;
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+    margin: 30px 0 0; padding: 14px 0;
+  }
+  .stat { padding: 4px 30px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: none; }
+  .stat .num { font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1; }
+  .stat .lab { font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-faint); margin-top: 6px; }
+
+  /* ── 控制列 ───────────────────────── */
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+    margin: 26px 0 8px;
+  }
+  .search { position: relative; flex: 1; min-width: 220px; }
+  .search input {
+    width: 100%; padding: 12px 14px 12px 40px; font-family: var(--sans); font-size: 15px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 2px; color: var(--ink);
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(138,43,43,.10); }
+  .search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-faint); }
+  select {
+    padding: 12px 14px; font-family: var(--sans); font-size: 14px; color: var(--ink);
+    background: var(--card); border: 1px solid var(--line); border-radius: 2px; cursor: pointer;
+  }
+  select:focus { outline: none; border-color: var(--accent); }
+
+  /* ── 主版面 ───────────────────────── */
+  .layout { display: grid; grid-template-columns: 232px 1fr; gap: 44px; padding: 18px 0 80px; align-items: start; }
+  aside { position: sticky; top: 22px; }
+  aside h3 {
+    font-family: var(--sans); font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
+    color: var(--ink-faint); margin: 0 0 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+  }
+  aside h3:not(:first-child) { margin-top: 30px; }
+  .filter {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+    width: 100%; padding: 7px 10px; margin: 1px 0; border: none; border-radius: 2px;
+    background: transparent; cursor: pointer; text-align: left; color: var(--ink-soft);
+    font-family: var(--sans); font-size: 14px; transition: background .15s, color .15s;
+  }
+  .filter:hover { background: var(--paper-2); color: var(--ink); }
+  .filter.active { background: var(--ink); color: var(--paper); }
+  .filter .n { font-family: var(--display); font-size: 13px; opacity: .7; }
+
+  /* ── 條目列表 ─────────────────────── */
+  .feed { min-height: 50vh; }
+  article.entry {
+    position: relative; padding: 26px 0; border-bottom: 1px solid var(--line);
+    cursor: pointer; opacity: 0; transform: translateY(10px);
+    animation: rise .6s cubic-bezier(.2,.7,.3,1) forwards;
+  }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  article.entry:first-child { padding-top: 4px; }
+  .entry .topline { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .tag {
+    font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; font-weight: 500;
+    color: var(--accent); padding: 3px 9px; border: 1px solid rgba(138,43,43,.30); border-radius: 2px;
+  }
+  .pin { font-size: 10.5px; letter-spacing: .14em; color: var(--accent-2); font-weight: 700; }
+  .entry h2 {
+    font-family: var(--serif); font-weight: 700; font-size: clamp(20px, 2.6vw, 26px);
+    line-height: 1.25; margin: 0 0 10px; color: var(--ink); letter-spacing: -.01em;
+    transition: color .2s;
+  }
+  .entry:hover h2 { color: var(--accent); }
+  .entry .meta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+    font-size: 13px; color: var(--ink-faint); margin-bottom: 12px;
+  }
+  .entry .meta .src { color: var(--ink-soft); font-weight: 500; }
+  .entry .meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--ink-faint); }
+  .entry p.excerpt {
+    font-family: var(--serif); font-size: 15.5px; line-height: 1.7; color: var(--ink-soft);
+    margin: 0; max-width: 64ch;
+  }
+  .entry .more {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 12px;
+    font-size: 13px; letter-spacing: .04em; color: var(--accent); font-weight: 500;
+  }
+  .entry .more::after { content: "→"; transition: transform .2s; }
+  .entry:hover .more::after { transform: translateX(4px); }
+  .nobody { font-style: italic; color: var(--ink-faint); }
+  .empty { text-align: center; padding: 80px 20px; color: var(--ink-faint); font-family: var(--serif); font-style: italic; }
+
+  /* ── 閱讀面板 ─────────────────────── */
+  .reader-bg {
+    position: fixed; inset: 0; z-index: 40; background: rgba(20,18,14,.46);
+    backdrop-filter: blur(3px); opacity: 0; visibility: hidden; transition: opacity .3s;
+  }
+  .reader-bg.open { opacity: 1; visibility: visible; }
+  .reader {
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 41; width: min(820px, 94vw);
+    background: var(--card); box-shadow: -20px 0 60px rgba(0,0,0,.22);
+    transform: translateX(102%); transition: transform .42s cubic-bezier(.22,.8,.28,1);
+    display: flex; flex-direction: column;
+  }
+  .reader.open { transform: none; }
+  .reader header { padding: 26px 34px 20px; border-bottom: 1px solid var(--line); }
+  .reader .r-tag { font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+  .reader h2 { font-family: var(--serif); font-weight: 700; font-size: 24px; line-height: 1.3; margin: 10px 0 12px; }
+  .reader .r-meta { font-size: 13px; color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .reader .body { flex: 1; overflow: hidden; background: #fff; }
+  .reader iframe { width: 100%; height: 100%; border: none; background: #fff; }
+  .reader .fallback { padding: 40px; font-family: var(--serif); color: var(--ink-soft); }
+  .close {
+    position: absolute; top: 22px; right: 26px; width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--line); background: var(--paper); cursor: pointer; color: var(--ink);
+    font-size: 20px; line-height: 1; transition: background .2s, transform .2s;
+  }
+  .close:hover { background: var(--ink); color: var(--paper); transform: rotate(90deg); }
+
+  footer { text-align: center; padding: 36px 0 60px; color: var(--ink-faint); font-size: 12px; letter-spacing: .1em; }
+  footer .em { color: var(--accent-2); }
+
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; gap: 20px; }
+    aside { position: static; }
+    aside .deskwrap { display: flex; flex-wrap: wrap; gap: 6px; }
+    aside h3 { width: 100%; }
+    .filter { width: auto; }
+    .stat { padding: 4px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <p class="kicker">SUBSCRIBED INTELLIGENCE ARCHIVE</p>
+    <h1><span class="tc">情報典藏室</span></h1>
+    <div class="rule"><span>卷宗自動彙編</span></div>
+    <p class="sub">訂閱信件的策展式典藏 — 以智庫視角重新閱讀每一封來信</p>
+    <div class="stats">
+      <div class="stat"><div class="num">5</div><div class="lab">典藏條目</div></div>
+      <div class="stat"><div class="num">5</div><div class="lab">情報來源</div></div>
+      <div class="stat"><div class="num">5</div><div class="lab">研究領域</div></div>
+      <div class="stat"><div class="num" style="font-size:15px;letter-spacing:.02em">2026.04.28 – 2026.05.18</div><div class="lab">收錄期間</div></div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="q" type="search" placeholder="搜尋主旨、來源、內文摘要…" autocomplete="off">
+    </div>
+    <select id="sort">
+      <option value="new">最新優先</option>
+      <option value="old">最早優先</option>
+      <option value="az">主旨 A→Z</option>
+    </select>
+  </div>
+
+  <div class="layout">
+    <aside>
+      <h3>研究領域</h3>
+      <div class="deskwrap" id="topicFilters"></div>
+      <h3>情報來源</h3>
+      <div class="deskwrap" id="sourceFilters"></div>
+    </aside>
+    <main class="feed" id="feed"></main>
+  </div>
+
+  <footer>
+    本卷宗於 <span class="em">2026.05.23 07:18</span> 由 <span class="em">build_archive.py</span> 自動彙編 ·
+    共 5 件典藏
+  </footer>
+</div>
+
+<!-- 閱讀面板 -->
+<div class="reader-bg" id="readerBg"></div>
+<div class="reader" id="reader" role="dialog" aria-modal="true">
+  <button class="close" id="closeReader" aria-label="關閉">×</button>
+  <header>
+    <span class="r-tag" id="rTag"></span>
+    <h2 id="rTitle"></h2>
+    <div class="r-meta" id="rMeta"></div>
+  </header>
+  <div class="body" id="rBody"></div>
+</div>
+
+<script>
+const DATA = [{"id": 2001, "subject": "台海週報：灰色地帶行動的新節奏", "from_name": "Strategic Brief", "from_email": "brief@stratdesk.org", "source": "Strategic Brief", "topic": "地緣戰略", "date_iso": "2026-05-18T08:30:00+00:00", "date_label": "2026.05.18", "date_sort": 1779093000.0, "excerpt": "樣本郵件 2001 這是一封用於測試的訂閱郵件。系統思考、回饋動力、地緣結構現實主義是反覆出現的主題。China, the Taiwan strait, democratic resilience, urban governance and …", "minutes": 1, "has_body": true, "rel_path": "./storage/2001.html", "pinned": false, "html": "<!doctype html><html><head><style>body{font-family:Georgia;padding:40px;max-width:680px;margin:auto;color:#222;line-height:1.7}h1{color:#8a2b2b}<\/style><\/head>\n<body><h1>樣本郵件 2001<\/h1>\n<p>這是一封用於測試的訂閱郵件。系統思考、回饋動力、地緣結構現實主義是反覆出現的主題。China, the Taiwan strait, democratic resilience, urban governance and AI alignment recur as anchors throughout this synthetic body so reading-time estimation and excerpt truncation can be verified properly.<\/p>\n<p>第二段補充更多文字，以驗證摘要在標點處截斷、以及 iframe 能正確渲染原始郵件的樣式與排版。<\/p><\/body><\/html>\n"}, {"id": 2002, "subject": "Democratic Resilience and the Self-Correcting Spectrum", "from_name": "Polity Letter", "from_email": "editor@polity.io", "source": "Polity Letter", "topic": "民主治理", "date_iso": "2026-05-15T22:05:00+00:00", "date_label": "2026.05.15", "date_sort": 1778882700.0, "excerpt": "樣本郵件 2002 這是一封用於測試的訂閱郵件。系統思考、回饋動力、地緣結構現實主義是反覆出現的主題。China, the Taiwan strait, democratic resilience, urban governance and …", "minutes": 1, "has_body": true, "rel_path": "./storage/2002.html", "pinned": false, "html": "<!doctype html><html><head><style>body{font-family:Georgia;padding:40px;max-width:680px;margin:auto;color:#222;line-height:1.7}h1{color:#8a2b2b}<\/style><\/head>\n<body><h1>樣本郵件 2002<\/h1>\n<p>這是一封用於測試的訂閱郵件。系統思考、回饋動力、地緣結構現實主義是反覆出現的主題。China, the Taiwan strait, democratic resilience, urban governance and AI alignment recur as anchors throughout this synthetic body so reading-time estimation and excerpt truncation can be verified properly.<\/p>\n<p>第二段補充更多文字，以驗證摘要在標點處截斷、以及 iframe 能正確渲染原始郵件的樣式與排版。<\/p><\/body><\/html>\n"}, {"id": 2003, "subject": "AI alignment 與生物評估者的極限", "from_name": "Frontier Notes", "from_email": "notes@frontier.ai", "source": "Frontier Notes", "topic": "前沿科技", "date_iso": "2026-05-10T06:00:00+00:00", "date_label": "2026.05.10", "date_sort": 1778392800.0, "excerpt": "樣本郵件 2003 這是一封用於測試的訂閱郵件。系統思考、回饋動力、地緣結構現實主義是反覆出現的主題。China, the Taiwan strait, democratic resilience, urban governance and …", "minutes": 1, "has_body": true, "rel_path": "./storage/2003.html", "pinned": false, "html": "<!doctype html><html><head><style>body{font-family:Georgia;padding:40px;max-width:680px;margin:auto;color:#222;line-height:1.7}h1{color:#8a2b2b}<\/style><\/head>\n<body><h1>樣本郵件 2003<\/h1>\n<p>這是一封用於測試的訂閱郵件。系統思考、回饋動力、地緣結構現實主義是反覆出現的主題。China, the Taiwan strait, democratic resilience, urban governance and AI alignment recur as anchors throughout this synthetic body so reading-time estimation and excerpt truncation can be verified properly.<\/p>\n<p>第二段補充更多文字，以驗證摘要在標點處截斷、以及 iframe 能正確渲染原始郵件的樣式與排版。<\/p><\/body><\/html>\n"}, {"id": 2004, "subject": "高齡城市治理：維也納與新加坡的對照", "from_name": "Urban Desk", "from_email": "desk@urbanlab.net", "source": "Urban Desk", "topic": "城市與社會", "date_iso": "2026-05-02T12:00:00+00:00", "date_label": "2026.05.02", "date_sort": 1777723200.0, "excerpt": "樣本郵件 2004 這是一封用於測試的訂閱郵件。系統思考、回饋動力、地緣結構現實主義是反覆出現的主題。China, the Taiwan strait, democratic resilience, urban governance and …", "minutes": 1, "has_body": true, "rel_path": "./storage/2004.html", "pinned": false, "html": "<!doctype html><html><head><style>body{font-family:Georgia;padding:40px;max-width:680px;margin:auto;color:#222;line-height:1.7}h1{color:#8a2b2b}<\/style><\/head>\n<body><h1>樣本郵件 2004<\/h1>\n<p>這是一封用於測試的訂閱郵件。系統思考、回饋動力、地緣結構現實主義是反覆出現的主題。China, the Taiwan strait, democratic resilience, urban governance and AI alignment recur as anchors throughout this synthetic body so reading-time estimation and excerpt truncation can be verified properly.<\/p>\n<p>第二段補充更多文字，以驗證摘要在標點處截斷、以及 iframe 能正確渲染原始郵件的樣式與排版。<\/p><\/body><\/html>\n"}, {"id": 2005, "subject": "（無內文測試）僅存目項目", "from_name": "", "from_email": "", "source": "未知來源", "topic": "綜合情報", "date_iso": "2026-04-28T09:00:00+00:00", "date_label": "2026.04.28", "date_sort": 1777366800.0, "excerpt": "", "minutes": 1, "has_body": false, "rel_path": "./storage/2005.html", "pinned": false, "html": ""}];
+const EMBED = true;
+let state = { q: "", topic: null, source: null, sort: "new" };
+
+const $ = (s) => document.querySelector(s);
+const feed = $("#feed");
+
+// 建立側邊篩選
+function buildFilters() {
+  const topics = {}, sources = {};
+  DATA.forEach(e => {
+    topics[e.topic] = (topics[e.topic]||0)+1;
+    sources[e.source] = (sources[e.source]||0)+1;
+  });
+  renderFilterGroup("#topicFilters", topics, "topic");
+  renderFilterGroup("#sourceFilters", sources, "source");
+}
+function renderFilterGroup(sel, counts, key) {
+  const box = $(sel);
+  const all = document.createElement("button");
+  all.className = "filter active"; all.dataset.key = key; all.dataset.val = "";
+  all.innerHTML = `<span>全部</span><span class="n">${Object.values(counts).reduce((a,b)=>a+b,0)}</span>`;
+  box.appendChild(all);
+  Object.entries(counts).sort((a,b)=>b[1]-a[1]).forEach(([name, n]) => {
+    const b = document.createElement("button");
+    b.className = "filter"; b.dataset.key = key; b.dataset.val = name;
+    b.innerHTML = `<span>${escapeHtml(name)}</span><span class="n">${n}</span>`;
+    box.appendChild(b);
+  });
+  box.addEventListener("click", (ev) => {
+    const btn = ev.target.closest(".filter"); if (!btn) return;
+    state[key] = btn.dataset.val || null;
+    box.querySelectorAll(".filter").forEach(x => x.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  });
+}
+
+function escapeHtml(s) {
+  return (s||"").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+}
+
+function filtered() {
+  let out = DATA.filter(e => {
+    if (state.topic && e.topic !== state.topic) return false;
+    if (state.source && e.source !== state.source) return false;
+    if (state.q) {
+      const hay = (e.subject + " " + e.source + " " + e.from_email + " " + e.excerpt).toLowerCase();
+      if (!hay.includes(state.q.toLowerCase())) return false;
+    }
+    return true;
+  });
+  const s = state.sort;
+  out.sort((a,b) => {
+    if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
+    if (s === "new") return b.date_sort - a.date_sort;
+    if (s === "old") return a.date_sort - b.date_sort;
+    if (s === "az")  return a.subject.localeCompare(b.subject, "zh-Hant");
+    return 0;
+  });
+  return out;
+}
+
+function render() {
+  const items = filtered();
+  feed.innerHTML = "";
+  if (!items.length) {
+    feed.innerHTML = `<div class="empty">沒有符合條件的卷宗。<br>試著放寬搜尋或切換篩選。</div>`;
+    return;
+  }
+  items.forEach((e, i) => {
+    const art = document.createElement("article");
+    art.className = "entry";
+    art.style.animationDelay = Math.min(i * 0.04, 0.4) + "s";
+    art.innerHTML = `
+      <div class="topline">
+        <span class="tag">${escapeHtml(e.topic)}</span>
+        ${e.pinned ? '<span class="pin">★ 置頂</span>' : ''}
+      </div>
+      <h2>${escapeHtml(e.subject)}</h2>
+      <div class="meta">
+        <span class="src">${escapeHtml(e.source)}</span>
+        <span class="dot"></span><span>${escapeHtml(e.date_label)}</span>
+        <span class="dot"></span><span>約 ${e.minutes} 分鐘</span>
+        ${e.has_body ? '' : '<span class="dot"></span><span class="nobody">僅存目</span>'}
+      </div>
+      <p class="excerpt">${escapeHtml(e.excerpt || "（此封信件沒有可預覽的內文）")}</p>
+      ${e.has_body ? '<span class="more">閱讀全文</span>' : ''}`;
+    art.addEventListener("click", () => openReader(e));
+    feed.appendChild(art);
+  });
+}
+
+// 閱讀面板
+const readerBg = $("#readerBg"), reader = $("#reader");
+function openReader(e) {
+  $("#rTag").textContent = e.topic;
+  $("#rTitle").textContent = e.subject;
+  $("#rMeta").innerHTML =
+    `<span>${escapeHtml(e.source)}</span>` +
+    (e.from_email ? `<span>${escapeHtml(e.from_email)}</span>` : "") +
+    `<span>${escapeHtml(e.date_label)}</span>`;
+  const body = $("#rBody");
+  if (!e.has_body) {
+    body.innerHTML = `<div class="fallback">這封信件目前只有索引資料，沒有保存完整內文。</div>`;
+  } else if (EMBED) {
+    const f = document.createElement("iframe");
+    f.setAttribute("sandbox", "allow-same-origin");
+    f.srcdoc = e.html;
+    body.innerHTML = ""; body.appendChild(f);
+  } else {
+    const f = document.createElement("iframe");
+    f.setAttribute("sandbox", "allow-same-origin");
+    f.src = e.rel_path;
+    body.innerHTML = ""; body.appendChild(f);
+  }
+  readerBg.classList.add("open");
+  reader.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeReader() {
+  readerBg.classList.remove("open");
+  reader.classList.remove("open");
+  document.body.style.overflow = "";
+  setTimeout(() => { $("#rBody").innerHTML = ""; }, 420);
+}
+readerBg.addEventListener("click", closeReader);
+$("#closeReader").addEventListener("click", closeReader);
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeReader(); });
+
+$("#q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+$("#sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
+
+buildFilters();
+render();
+</script>
+</body>
+</html>
