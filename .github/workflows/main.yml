@@ -1,8 +1,11 @@
 name: Run Python Script Safely
 
 on:
-  push:
-    branches: [ "main" ]
+  schedule:
+    # 每天台灣時間早上 9 點執行 (UTC+8 → UTC 1 點)
+    - cron: '* */1.5 * * *'
+  workflow_dispatch:  # 手動觸發
+
 
 jobs:
   run-python:
