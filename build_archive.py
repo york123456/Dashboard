@@ -117,7 +117,7 @@ for msg in messages[::]:
       result = f.readlines()
     Emaillist = " ".join(map(str, result))
 
-    if detail["from_email"] in emailwhitelist and emailinfo not in Emaillist and "Confirm".casefold() not in emailinfo.casefold() and "訂閱".casefold() not in emailinfo.casefold() and "登録確定".casefold() not in emailinfo.casefold() :
+    if detail["from_email"] in emailwhitelist and emailinfo not in Emaillist and "Confirm".casefold() not in emailinfo.casefold() and "訂閱".casefold() not in emailinfo.casefold() and "登録確定".casefold() not in emailinfo.casefold()  and "Welcome".casefold() not in emailinfo.casefold() :
 
 
       # 使用 'a' 模式開啟檔案，若檔案不存在則會自動建立
