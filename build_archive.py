@@ -750,12 +750,12 @@ function openReader(e) {
     body.innerHTML = `<div class="fallback">這封信件目前只有索引資料，沒有保存完整內文。</div>`;
   } else if (EMBED) {
     const f = document.createElement("iframe");
-    f.setAttribute("sandbox", "allow-same-origin");
+    f.setAttribute("sandbox", "allow-popups allow-popups-to-escape-sandbox");
     f.srcdoc = e.html;
     body.innerHTML = ""; body.appendChild(f);
   } else {
     const f = document.createElement("iframe");
-    f.setAttribute("sandbox", "allow-same-origin");
+    f.setAttribute("sandbox", "allow-popups allow-popups-to-escape-sandbox");
     f.src = e.rel_path;
     body.innerHTML = ""; body.appendChild(f);
   }
