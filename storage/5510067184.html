@@ -1,0 +1,938 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- XSS REPLACEMENTS START-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- XSS REPLACEMENTS END--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial scale=1.0" />
+<meta name="robots" content="no index" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="address=no" />
+
+<!--[if !mso]><!-->
+
+
+<!--<![endif]-->
+
+<title></title>
+<style type="text/css">
+.ReadMsgBody {
+    width: 100%;
+}
+.ExternalClass {
+    width: 100%;
+}
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+    line-height: 100%;
+}
+body {
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    margin: 0 auto !important;
+    padding: 0;
+    min-width: 100% !important;
+}
+td {
+    mso-line-height-rule: exactly;
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+img {
+    margin: 0 !important;
+}
+/* Forces Outlook to honor line-height */
+div, p, a, li, td, span {
+    -webkit-text-size-adjust: none;
+}
+/* Hides preheader on Outlook */
+.set_outlook_hidden {
+    display: none !important;
+}
+/* Overrides blue links */
+a[href^=tel], #MessageViewBody a, a[x-apple-data-detectors], #body a, .link {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+/* Wraps bullet proof button */
+a.button {
+    border-left: 0px !important;
+    border-right: 0px !important;
+    display: block !important;
+    width: 100% !important;
+}
+[data-outlook-cycle] [x-apple-data-detectors-type="calendar-event"] {
+    color: inherit !important;
+    -webkit-text-decoration-color: inherit !important;
+    text-decoration: none !important;
+}
+/*Stops Outlook iOS blue dates*/
+#body [x-apple-data-detectors=true],
+a[x-apple-data-detectors=true] {
+    color: inherit !important;
+    -webkit-text-decoration-color: inherit !important;
+    text-decoration: inherit !important;
+}
+/* Default superscript code */
+sup {
+    -webkit-text-size-adjust: none;
+    vertical-align: text-top .6em;
+    line-height: .6em;
+    font-size: 60%;
+}
+/* Default subscript code */
+sub {
+    -webkit-text-size-adjust: none;
+    vertical-align: text-bottom .9em;
+    line-height: .9em;
+    font-size: 60%;
+}
+.yshortcuts a {
+    border-bottom: none !important;
+}
+/* Renders TH on yahoo */
+.undoreset th {
+    padding: 1px !important;
+}
+/* Extra classes */
+.nowrap {
+    white-space: nowrap !important;
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+
+/* STYLES FOR ROUNDED BORDER BUTTONS */
+@media screen and (max-device-width: 600px), screen and (max-width: 600px) {
+  .wrapto100pc {
+      width: 100% !important;
+      height: auto !important;
+  }
+  .nomob_rounded {
+      display: none !important;
+      width: 0px !important;
+      height: 0px !important;
+  }
+}
+u + #body a {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+u + #body .nomob_rounded {
+    display: none!important;
+    width: 0px!important;
+    height: 0px!important;
+}
+u + #body .gmailbutton {
+    width: 100% !important;
+}
+
+/* STYLES FOR RESPONSIVE */
+@media only screen and (max-width: 480px) {
+  /* SHOW ON RESPONSIVE */
+  .mobile_show {
+      display: block !important;
+      width: auto !important;
+      overflow: visible !important;
+      float: none !important;
+      max-height: none !important;
+      line-height: normal !important;
+      height: auto !important;
+  }
+  /* HIDE ON RESPONSIVE */
+  .nomob, .hide {
+      display: none !important;
+  }
+  /* RESPONSIVE BACKGROUND IMAGE */
+  .bgAdjust {
+      background-position: top center;
+  }
+  .hide_bgimage {
+      background-image: none !important;
+      height: auto !important;
+      width: 100% !important;
+  }
+  /* ALIGNS OBJECTS ON RESPONSIVE */
+  .center {
+      text-align: center !important;
+  }
+  .left {
+      text-align: left !important;
+  }
+  .right {
+      text-align: right !important;
+  }
+  /* ALIGN BLOCK ELEMENTS ON RESPONSIVE */
+  .margin0 {
+      margin: 0 auto !important;
+  }
+  .margin-left {
+      margin-right: auto;
+      margin-left: 0;
+  }
+  .margin-right {
+      margin-right: 0;
+      margin-left: auto;
+  }
+  /* WRAP & RESIZE ON RESPONSIVE */
+  .wrap {
+      width: 100% !important;
+      height: auto !important;
+      min-width: 100% !important;
+  }
+  .wrap-existing-content {
+      height: auto !important;
+      display: block;
+  }
+  .resize280 {
+      width: 280px !important;
+      height: auto !important;
+  }
+  /* SPLIT COLUMNS ON RESPONSIVE */
+  .colsplit {
+      width: 100% !important;
+      float: inherit !important;
+      display: block !important;
+      background-position: top center !important;
+  }
+  /* STACK IMAGE TOP OR BOTTOM ON RESPONSIVE */
+  th.topstack {
+      display: table-header-group !important;
+  }
+  th.botstack {
+      display: table-footer-group !important;
+  }
+  /* Inlines objects on responsive */
+  .inline {
+      display: inline-block !important;
+  }
+  /* RESPONSIVE PADDING STYLES - 0 or 20 */
+  .pad0 {
+      padding: 0px !important;
+  }
+  .pad0t {
+      padding-top: 0px !important;
+  }
+  .pad0r {
+      padding-right: 0px !important;
+  }
+  .pad0b {
+      padding-bottom: 0px !important;
+  }
+  .pad0l {
+      padding-left: 0px !important;
+  }
+  .pad0rl {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+  }
+  .pad0tb {
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+  }
+  .pad20 {
+      padding: 20px !important;
+  }
+  .pad20t {
+      padding-top: 20px !important;
+  }
+  .pad20r {
+      padding-right: 20px !important;
+  }
+  .pad20b {
+      padding-bottom: 20px !important;
+  }
+  .pad20l {
+      padding-left: 20px !important;
+  }
+  .pad20rl {
+      padding-right: 20px !important;
+      padding-left: 20px !important;
+  }
+  .pad20tb {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+  }
+}
+
+/* REMOVES RIGHT GUTTER IN GMAIL IOS APP */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+  /* iPhone 5 and 5S */
+  .email-container {
+      min-width: 320px !important;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+/* iPhone 6 and 6+ */
+  .email-container {
+      min-width: 375px !important;
+  }
+}
+
+/* STYLES FOR RESPONSIVE FONT SIZES */
+
+
+/* MCK-008: Footer | Logo + Social Icons */
+@media only screen and (max-width: 480px) {
+.pad15l {
+padding-left: 15px !important;
+}
+.pad16b {
+padding-bottom: 16px !important;
+}
+}
+
+
+@media only screen and (max-width: 480px) {
+    td .mobile_h1, td .mobile_h1 span {
+font-size: 36px !important;
+line-height: 120% !important;
+}
+td .mobile_h2, td .mobile_h2 span {
+font-size: 24px !important;
+line-height: 120% !important;
+}
+td .mobile_h3, td .mobile_h3 span {
+font-size: 24px !important;
+line-height: 120% !important;
+}
+td .mobile_h4, td .mobile_h4 span {
+font-size: 20px !important;
+line-height: 120% !important;
+}
+td .mobile_p1, td .mobile_p1 span {
+font-size: 16px !important;
+line-height: 150% !important;
+}
+td .mobile_p2, td .mobile_p2 span {
+font-size: 14px !important;
+line-height: 150% !important;
+}
+td .mobile_p3, td .mobile_p3 span {
+font-size: 12px !important;
+line-height: 150% !important;
+}
+td .mobile_cta, td .mobile_cta span {
+font-size: 16px !important;
+line-height: 150% !important;
+}
+}
+
+@media only screen and (max-width:480px) {
+    [data-personalization_mapping] {
+    position: relative;
+}
+[data-personalization_mapping] .personalization-placeholder-value, [data-personalization_mapping] .personalization-placeholder-value * {
+    color: inherit;
+    font-weight: inherit;
+    background-color: rgba(56, 240, 115, 0.14902);
+}
+[data-personalization_mapping] .personalization-script-value, [data-personalization_mapping] .personalization-styling-el {
+    display: none;
+}
+[data-personalization_mapping] .personalization-tooltip-el {
+    display: none;
+    width: max-content;
+    position: absolute;
+    left: 10%;
+    top: 100%;
+    z-index: 10000;
+    padding: 8px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 8px 0 rgba(122, 133, 148, 0.3);
+}
+[data-personalization_mapping] .personalization-tooltip-el .personalization-tooltip-el-row {
+    font-size: 12px;
+    display: block;
+    padding-bottom: 8px;
+    clear: both;
+    line-height: 18px;
+}
+[data-personalization_mapping] .personalization-tooltip-el .personalization-tooltip-el-row .personalization-tooltip-label {
+    color: #7a8594;
+    display: inline;
+    float: left;
+    font-size: 12px !important;
+    line-height: 18px !important;
+}
+[data-personalization_mapping] .personalization-tooltip-el .personalization-tooltip-el-row .personalization-tooltip-friendly-name, [data-personalization_mapping] .personalization-tooltip-el .personalization-tooltip-el-row .personalization-tooltip-default-value {
+    font-weight: 600;
+    color: #333;
+    display: inline;
+    float: left;
+    font-size: 12px !important;
+    line-height: 18px !important;
+}
+[data-personalization_mapping]:hover .personalization-tooltip-el {
+    display: inherit;
+}
+}
+</style>
+<!--[if mso | ie]>
+<style>
+.sup {
+  vertical-align: 1px !important;
+  font-size: 100% !important;
+}
+</style>
+<![endif]-->
+
+<!--[if ie]>
+<style>
+  .sup {
+    vertical-align: 5px !important;
+    font-size: 77% !important;
+  }
+</style>
+<![endif]-->
+
+<!--[if gt mso 15]>
+<style type="text/css" media="all">
+  /* Outlook 2016 Height Fix */
+  .email-container table, 
+  .email-container tr, 
+   .email-container th, 
+   .email-container td {
+       border-collapse: collapse;
+}
+  .email-container tr { 
+     font-size:0px; 
+     line-height:0px; 
+     border-collapse: collapse; 
+}
+th, td {font-size: 16px;}
+</style>
+<![endif]-->
+
+<!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+
+</head>
+<body id="body"  background="" style="margin:0 !important; padding:0 !important; width: 100% !important; background-color: #F0F0F0; background-size: auto; background-repeat: repeat; " class="body">
+
+	<!--START -- Hidden Preheader -->
+		<!--[if !mso 9]><!-->
+		<div style="display: none !important; font-size: 1px; color: #F0F0F0; line-height: 1px; font-family: Arial,Helvetica,sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">Data is key&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+		&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
+		<!--<![endif]-->
+		<!--END -- Hidden Preheader -->
+
+    
+
+   <!--START -- Page Overflow Color Table -->
+<div style="background-color: #F0F0F0;">
+
+<!--[if gte mso 9]>
+	<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+	<v:fill type="tile" src="" color="#F0F0F0"/>
+	</v:background>
+	<![endif]-->
+
+    <table role="presentation" height="100%" width="100%" cellpadding="0"  cellspacing="0" border="0" align="center" class="email-container">
+        <tr>
+            <td align="left" background="" style="vertical-align: top; background-size: auto; background-repeat: repeat;" valign="top">
+
+				<!--START -- Email Background Color Table  -->
+
+                <table role="presentation" width="640" border="0" align="center" cellpadding="0" cellspacing="0"  class="wrap">
+                    <tr>
+						<td align="center" data-wrapper>
+
+					    	<!--START Email Size Wrapper Table -->
+
+                            <table role="presentation" width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td align="center" style="font-size:14px"><table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td border="0" style="display: block; margin: 0; padding: 0;">
+<img src='https://email.mckinsey.com/O/v710000019e6d662083a582a0f4bbc782e8/d6a447a39e1c46c800004c5a42963aa1' style="display:none; max-height: 0px; font-size: 0px; overflow: hidden; mso-hide: all"/>      </td>
+    </tr>
+  </tbody>
+</table></td></tr><style data-ignore-inlining="">@media (prefers-color-scheme: dark) { #_t::before {content:url('https://kop3stni.emltrk.com/v2/kop3stni?rd&i=17223831&t=Guide_ProbSol_Sq1_Em1');}} @media (prefers-color-scheme: light) { #_t::before {content:url('https://kop3stni.emltrk.com/v2/kop3stni?rl&i=17223831&t=Guide_ProbSol_Sq1_Em1');}} @media print{ #_t {background-image:url('https://kop3stni.emltrk.com/v2/kop3stni?p&i=17223831&t=Guide_ProbSol_Sq1_Em1');}} div.OutlookMessageHeader {background-image:url('https://kop3stni.emltrk.com/v2/kop3stni?f&i=17223831&t=Guide_ProbSol_Sq1_Em1')} table.moz-email-headers-table {background-image:url('https://kop3stni.emltrk.com/v2/kop3stni?f&i=17223831&t=Guide_ProbSol_Sq1_Em1')} blockquote #_t {background-image:url('https://kop3stni.emltrk.com/v2/kop3stni?f&i=17223831&t=Guide_ProbSol_Sq1_Em1')} #MailContainerBody #_t {background-image:url('https://kop3stni.emltrk.com/v2/kop3stni?f&i=17223831&t=Guide_ProbSol_Sq1_Em1')}</style><div id="_t"></div>
+<img src="https://kop3stni.emltrk.com/v2/kop3stni?i=17223831&t=Guide_ProbSol_Sq1_Em1" width="1" height="1" border="0" alt=""></tbody></table></td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#FFFFFF"><!-- Start 1-013: Static Image -->
+<section id="1013_static_image" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td valign="top" align="center" style="padding: 0px 20px 0px 20px"> <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF"> <tbody><tr> <td align="left" valign="top" style="padding: 20px 0px 20px 0px" data-groupid="static" class="left pad0rl"> <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="146" class="wrap"> <tbody><tr> <td align="left" class="left"><a href="http://email.mckinsey.com/homefeed?__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcc2&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=bWNraW5zZXkuY29t&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=33cc095ab9624420b9df8973587bd7c2&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" data-managed-link="static_link_url" target="_blank" data-link-id="c1cf9a5106ff11efb2f429b02a708ac5"><img agilecontent="true" src="https://images.harmony.epsilon.com/ContentHandler/images?id=2152df80-85ef-11ec-bfbd-63e34607b458" alt="McKinsey &amp; Company" width="146" height="auto" border="0" style="display: block; vertical-align: top" class="inline"></a></td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-013: Static Image --> </td></tr></tbody></table></td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#FFFFFF"><!-- Start 1-012: Switch Image --><section id="1012_switch_image" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td valign="top" align="left"> <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="wrap"> <tbody><tr> <td align="center" style="padding: 0px 0px 0px 0px"> <!-- Start Desktop Image --> <table role="presentation" width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="nomob"> <tbody><tr> <td align="center" style="padding: 0px 0px 0px 0px" data-groupid="scaled" class="pad0rl"><a href="https://email.mckinsey.com/featured-insights/mckinsey-publishing-guides?__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcc3&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=345ccd3904054b0cbdea2920c69c5e1a&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" data-managed-link="scaled_link_url" target="_blank" data-link-id="550e91a106ff11efab06d34eee326b5e"><img agilecontent="true" src="https://images.harmony.epsilon.com/ContentHandler/images?id=d5484050-139d-11ef-b0ca-97f71b9c0e7e" alt="The McKinsey guide to problem solving" width="640" height="auto" style="display: block" border="0" class="wrap"></a></td> </tr> </tbody></table> <!-- End Desktop Image --> <!-- Start Responsive Image --> <!--[if !mso]><!--> <div class="mobile_show" style="display: none; max-height: 0px; overflow: hidden; width: 0; height: 0; mso-hide: all"> <table role="presentation" border="0" cellpadding="0" cellspacing="0"> <tbody><tr> <td style="display: none" class="mobile_show"> <a href="https://email.mckinsey.com/featured-insights/mckinsey-publishing-guides?__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcc4&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=2f35aafad5b3407488a79c34a61ab200&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" data-managed-link="mobile_link_url" target="_blank" data-link-id="550e91a206ff11efab06d34eee326b5e"><img agilecontent="true" src="https://images.harmony.epsilon.com/ContentHandler/images?id=d5484050-139d-11ef-b0ca-97f71b9c0e7e" alt="The McKinsey guide to problem solving" width="480" height="auto" border="0" style="display: block" class="wrap"></a> </td> </tr> </tbody></table> </div> <!--<![endif]--> <!-- End Responsive Image --> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-012: Switch Image --> </td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-011: Scaled Image -->
+<section id="1011_scaled_image" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td valign="top" align="left"> <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="wrap"> <tbody><tr> <td align="center" style="padding: 0px 0px 0px 0px" data-groupid="scaled"><img agilecontent="true" src="https://images.harmony.epsilon.com/ContentHandler/images?id=92014dd0-ff8e-11eb-89c1-1f2ca2f6c9a5" alt="" width="640" height="auto" style="display: block; vertical-align: top" border="0" class="wrap"></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-011: Scaled Image --> </td></tr></tbody></table></td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-000: Spacer --><section id="1000" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td> <table role="presentation" width="100%" border="0" cellspacing="0"> <tbody><tr> <td height="20" align="left" valign="top" bgcolor="#FFFFFF" style="line-height: 0px; padding: 0px;"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height="20" style="display: block; height: 20px" border="0" alt=""></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-000: Spacer --> </td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#FFFFFF"><!-- Start 1-008: Paragraph | P1 --><section id="1008_p1" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td valign="top" align="left"> <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="wrap"> <tbody><tr> <td align="left" style="padding: 0px 20px 4px 20px" class="pad20rl match"><p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif" enable-personalization="true" data-richtext="p1_text" data-groupid="p1" class="mobile_match"><span style="font-size: 14px; color: #757575; line-height: 150%;">Email 1 of 7</span><em><span style="font-size: 16px; line-height: 150%;"><br></span></em></p></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-008: Paragraph | P1 --> </td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-005: Headline | H2 --><section id="1005_h2" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td valign="top" align="left"> <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="wrap"> <tbody><tr> <td align="left" style="padding: 0px 20px 16px 20px" class="pad20rl match"><h2 style="font-size: 14px; mso-line-height-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #000000; font-family: Georgia, Cambria, Times, Times New Roman, serif" enable-personalization="true" data-richtext="h2_text" data-groupid="h2" class="mobile_match"><strong><span style="font-size: 24px; line-height: 120%;">﻿How to make the most of your data</span></strong></h2> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-005: Headline | H2 --> </td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-008: Paragraph | P1 --><section id="1008_p1" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td valign="top" align="left"> <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="wrap"> <tbody><tr> <td align="left" style="padding: 0px 20px 20px 20px" class="pad20rl match"><p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif" enable-personalization="true" data-richtext="p1_text" data-groupid="p1" class="mobile_match"><em><span style="font-size: 16px; line-height: 150%;">Welcome to "The McKinsey Publishing Guide to problem solving." In this first email, we'll dive into the importance of data and data analysis as an informative step of the problem-solving process. Read on to learn how to make the most of your data to solve even the most complex challenges.<br></span></em></p></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-008: Paragraph | P1 --> </td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-008: Paragraph | P1 --><section id="1008_p1" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td valign="top" align="left"> <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="wrap"> <tbody><tr> <td align="left" style="padding: 0px 20px 20px 20px" class="pad20rl match"><p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif" enable-personalization="true" data-richtext="p1_text" data-groupid="p1" class="mobile_match"><span style="font-size: 16px; line-height: 150%;">Companies that harness the power of data have the upper hand when it comes to problem solving. Rather than defaulting to solving problems by developing lengthy—sometimes multiyear—road maps, they’re empowered to ask how innovative data techniques could resolve challenges in hours, days or weeks, <a href="https://email.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025?__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcc5&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=4538e7b979954a218cd2234a03c796df&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" style="color: rgb(51, 51, 51); font-weight: inherit; background: none; text-decoration: none;" data-link-id="92658a40281f11ef857b95bd535dd2b0"><span style="text-decoration: underline; line-height: 150%; color: rgb(34, 81, 255);">write</span></a> senior partner <a href="https://email.mckinsey.com/our-people/kayvaun-rowshankish?__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcc6&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=9d963806569e4fd091d27f586da71dd9&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" style="color: rgb(51, 51, 51); font-weight: inherit; background: none; text-decoration: none;" data-link-id="ca2dc870281f11ef857b95bd535dd2b0"><span style="text-decoration: underline; line-height: 150%; color: rgb(34, 81, 255);">Kayvaun Rowshankish</span></a> and coauthors.&nbsp;<br><br>But when organizations have more data than ever at their disposal, which data should they leverage? Before jumping in, it’s crucial to plan the analysis, decide which analytical tools to use, and ensure rigor. Uncover ways data can take your problem-solving techniques to the next level.<br></span></p></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-008: Paragraph | P1 --> </td></tr></tbody></table></td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-000: Spacer --><section id="1000" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td> <table role="presentation" width="100%" border="0" cellspacing="0"> <tbody><tr> <td height="20" align="left" valign="top" bgcolor="#FFFFFF" style="line-height: 0px; padding: 0px;"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height="20" style="display: block; height: 20px" border="0" alt=""></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-000: Spacer --> </td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#ffffff"><!-- Start MCK-004: Content | 2|3 -->
+				<section id="MCK004" layout-row="true">
+					<div layout-row="true">
+						<table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="wrap">
+							<tbody><tr layout-row="true">
+								<td>
+									<table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr>
+											<td align="left" valign="top" style="vertical-align: top; padding: 0px 20px 20px 20px; background-color: #ffffff;" bgcolor="#ffffff">
+												<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+													<tbody><tr>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal;" class="colsplit botstack">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 2px 0px 10px 0px;">
+																	<h4 style="font-size: 14px; mso-line-height-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; color: #000000; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="headline_text" data-groupid="headline" class="mobile_h4"><a style="color: #000000; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025?stcr=A1B531515E894C5CACCD93263403B26E&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcc7&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=42e9494cb6e5411aa16f388aa4886514&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="bf71ff12aba711ec9cd17dc10c697280"><span style="font-size: 18px; line-height: 120%;"><strong>1. Be prepared for the evolution of data</strong></span></a></h4>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 10px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="col1_p1_text" data-groupid="col1_p1" class="mobile_p1"><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025?stcr=A1B531515E894C5CACCD93263403B26E&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcc8&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=5704f674d06d4622b060313f1e0f2a64&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="7a3a9df0d2dd11ecb4335b6d0acc4209"><span style="font-size: 14px; line-height: 150%;">﻿Data will be embedded in every decision, interaction, and process. Today, many business problems still get solved through traditional approaches and take months or years to resolve. But by 2025, employees will be empowered to ask how innovative data techniques could resolve challenges in hours, days or weeks. Organizations will be capable of better decision making as well as automating basic day-to-day activities and regularly occurring decisions.</span></a></p>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 0px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="text_link_text" data-groupid="text_link" class="mobile_p1"><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025?stcr=A1B531515E894C5CACCD93263403B26E&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcc9&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=eeede7af0a214b09b2ec79c97080ea84&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="9e903dc0af8f11ec8d855901c367ffa1"><strong><span style="font-size: 14px; line-height: 150%;">Read: <span style="text-decoration: underline; line-height: 150%;"><span style="color: rgb(34, 81, 255); line-height: 150%; text-decoration: underline;">The data-driven enterprise of 2025﻿</span></span></span></strong></a></p>
+																	</td>
+																</tr>
+															</tbody></table>
+														</th>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal; width: 170px" class="colsplit topstack" width="170">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 4px 0px 0px 20px;" class="pad20b pad0l" data-groupid="img"><a data-managed-link="img_link_url" href="https://email.mckinsey.com/capabilities/quantumblack/our-insights/the-data-driven-enterprise-of-2025?stcr=A1B531515E894C5CACCD93263403B26E&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcca&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=e588c160012e48edae6321726de4a363&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" data-link-id="bf71ff11aba711ec9cd17dc10c697280"><img agilecontent="true" src="https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20analytics/our%20insights/the%20data%20driven%20enterprise%20of%202025/mckinsey-header-thumb_1536x1536.jpg?mw=768&amp;car=16:9" alt="""" width="170" height="auto" style="display: block;" border="0" class="wrap"></a></td>
+																</tr>
+															</tbody></table>
+														</th>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<!-- End MCK-004: Content | 2|3 --> </td></tr></tbody></table></td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-000: Spacer --><section id="1000" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td> <table role="presentation" width="100%" border="0" cellspacing="0"> <tbody><tr> <td height="20" align="left" valign="top" bgcolor="#FFFFFF" style="line-height: 0px; padding: 0px;"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height="20" style="display: block; height: 20px" border="0" alt=""></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-000: Spacer --> </td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#ffffff"><!-- Start MCK-004: Content | 2|3 -->
+				<section id="MCK004" layout-row="true">
+					<div layout-row="true">
+						<table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="wrap">
+							<tbody><tr layout-row="true">
+								<td>
+									<table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr>
+											<td align="left" valign="top" style="vertical-align: top; padding: 0px 20px 20px 20px; background-color: #ffffff;" bgcolor="#ffffff">
+												<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+													<tbody><tr>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal;" class="colsplit botstack">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 2px 0px 10px 0px;">
+																	<h4 style="font-size: 14px; mso-line-height-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; color: #000000; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="headline_text" data-groupid="headline" class="mobile_h4"><a style="color: #000000; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/featured-insights/mckinsey-on-books/author-talks-think-digital?stcr=0B3B34B178714DB59F1FE5ADE19869B9&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bccb&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=77ea103da45042fc85ef04f5c5af0367&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="bbfaa060af7d11ecb6b325899cb0fecc"><strong><span style="font-size: 18px; line-height: 120%;">2. Understand what data you have at your disposal</span></strong></a></h4>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 10px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="col1_p1_text" data-groupid="col1_p1" class="mobile_p1"><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/featured-insights/mckinsey-on-books/author-talks-think-digital?stcr=0B3B34B178714DB59F1FE5ADE19869B9&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bccc&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=a9953c7081c044629510ce3b1be470c6&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="885a7e00d2dd11ecb4335b6d0acc4209"><span style="font-size: 14px; line-height: 150%;">﻿People think that you just have data, when actually, they’re produced. What we have and what we don’t have is constructed by the decisions that are made on what data to collect, and what data not to collect. To have a data-informed environment is incredibly important, but that requires us to make decisions about what we’re collecting, what we’re interpreting, and how we’re interpreting it.</span></a></p>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 0px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="text_link_text" data-groupid="text_link" class="mobile_p1"><strong><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/featured-insights/mckinsey-on-books/author-talks-think-digital?stcr=0B3B34B178714DB59F1FE5ADE19869B9&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bccd&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=a9bff852870a4252b6763f07c2f65737&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="d22537b0af7d11ecb6b325899cb0fecc"><span style="font-size: 14px; line-height: 150%;"><span style="line-height: 150%;">Read: <span style="text-decoration: underline; line-height: 150%;"><span style="color: rgb(34, 81, 255); line-height: 150%; text-decoration: underline;">Author Talks: Think digital</span></span></span></span></a></strong></p>
+																	</td>
+																</tr>
+															</tbody></table>
+														</th>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal; width: 170px" class="colsplit topstack" width="170">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 4px 0px 0px 20px;" class="pad20b pad0l" data-groupid="img"><a data-managed-link="img_link_url" href="https://email.mckinsey.com/featured-insights/mckinsey-on-books/author-talks-think-digital?stcr=0B3B34B178714DB59F1FE5ADE19869B9&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcce&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=b45a51a6974f4c3891ce137b60f48b42&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" data-link-id="d6115131aba711ec9cd17dc10c697280"><img agilecontent="true" src="https://www.mckinsey.com/~/media/mckinsey/featured%20insights/mckinsey%20books/author%20talks%20think%20digital/neeleytsedal_50-50.jpg?mw=768&amp;car=16:9" alt="Neeley Tsedal" width="170" height="auto" style="display: block;" border="0" class="wrap"></a></td>
+																</tr>
+															</tbody></table>
+														</th>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<!-- End MCK-004: Content | 2|3 --> </td></tr></tbody></table></td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-000: Spacer --><section id="1000" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td> <table role="presentation" width="100%" border="0" cellspacing="0"> <tbody><tr> <td height="20" align="left" valign="top" bgcolor="#FFFFFF" style="line-height: 0px; padding: 0px;"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height="20" style="display: block; height: 20px" border="0" alt=""></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-000: Spacer --> </td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#ffffff"><!-- Start MCK-004: Content | 2|3 -->
+				<section id="MCK004" layout-row="true">
+					<div layout-row="true">
+						<table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="wrap">
+							<tbody><tr layout-row="true">
+								<td>
+									<table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr>
+											<td align="left" valign="top" style="vertical-align: top; padding: 0px 20px 20px 20px; background-color: #ffffff;" bgcolor="#ffffff">
+												<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+													<tbody><tr>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal;" class="colsplit botstack">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 2px 0px 10px 0px;">
+																	<h4 style="font-size: 14px; mso-line-height-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; color: #000000; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="headline_text" data-groupid="headline" class="mobile_h4"><strong><a style="color: #000000; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/what-every-ceo-should-know-about-generative-ai?stcr=B60B136AD987472CAB40D9BD1EAA4AFF&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bccf&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=a681684d46a94d7fb0505c543f6c5b30&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="64d1e4a0af7e11ecb6b325899cb0fecc"><span style="font-size: 18px; line-height: 120%;">3. Generative AI (gen AI) can help speed up analysis—if the right structures are in place</span></a></strong></h4>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 10px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="col1_p1_text" data-groupid="col1_p1" class="mobile_p1"><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/what-every-ceo-should-know-about-generative-ai?stcr=B60B136AD987472CAB40D9BD1EAA4AFF&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd0&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=c4e1b1be30f847b2959c5e39f09c7d41&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="a210fb30d2dd11ecb4335b6d0acc4209"><span style="font-size: 14px; line-height: 150%;">﻿The lifeblood of gen AI is fluid access to data honed for a specific business context or problem. Companies that have not yet found ways to effectively harmonize and provide ready access to their data will be unable to fine-tune gen AI to unlock more of its potentially transformative uses. Equally important is to design a scalable data architecture that includes data governance and security procedures.</span></a></p>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 0px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="text_link_text" data-groupid="text_link" class="mobile_p1"><strong><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/what-every-ceo-should-know-about-generative-ai?stcr=B60B136AD987472CAB40D9BD1EAA4AFF&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd1&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=4c4a34331cee45ec8104eac37dc6dcb9&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="da117cb4aba711ec9cd17dc10c697280"><span style="font-size: 14px; line-height: 150%;">Read: <span style="text-decoration: underline; line-height: 150%; color: rgb(34, 81, 255);">What every CEO should know about generative AI﻿</span></span></a></strong></p>
+																	</td>
+																</tr>
+															</tbody></table>
+														</th>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal; width: 170px" class="colsplit topstack" width="170">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 4px 0px 0px 20px;" class="pad20b pad0l" data-groupid="img"><a data-managed-link="img_link_url" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/what-every-ceo-should-know-about-generative-ai?stcr=B60B136AD987472CAB40D9BD1EAA4AFF&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd2&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=1a32af7993ac41159ad74aea6c5e6c84&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" data-link-id="da117cb1aba711ec9cd17dc10c697280"><img agilecontent="true" src="https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/what%20every%20ceo%20should%20know%20about%20generative%20ai/gen-ai-ceo-thumb.jpg?mw=768&amp;car=16:9" alt="Moving illustration of wavy blue lines that was produced using computer code" width="170" height="auto" style="display: block;" border="0" class="wrap"></a></td>
+																</tr>
+															</tbody></table>
+														</th>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<!-- End MCK-004: Content | 2|3 --> </td></tr></tbody></table></td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-000: Spacer --><section id="1000" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td> <table role="presentation" width="100%" border="0" cellspacing="0"> <tbody><tr> <td height="20" align="left" valign="top" bgcolor="#FFFFFF" style="line-height: 0px; padding: 0px;"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height="20" style="display: block; height: 20px" border="0" alt=""></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-000: Spacer --> </td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#ffffff"><!-- Start MCK-004: Content | 2|3 -->
+				<section id="MCK004" layout-row="true">
+					<div layout-row="true">
+						<table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="wrap">
+							<tbody><tr layout-row="true">
+								<td>
+									<table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr>
+											<td align="left" valign="top" style="vertical-align: top; padding: 0px 20px 20px 20px; background-color: #ffffff;" bgcolor="#ffffff">
+												<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+													<tbody><tr>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal;" class="colsplit botstack">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 2px 0px 10px 0px;">
+																	<h4 style="font-size: 14px; mso-line-height-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; color: #000000; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="headline_text" data-groupid="headline" class="mobile_h4"><a style="color: #000000; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/quantumblack/our-insights/how-to-unlock-the-full-value-of-data-manage-it-like-a-product?stcr=DE35C9D95F8C4AFBABB8F8197C95DABA&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd3&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=aa5e44829f2b4ec9af88796ad8598278&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="30c5f5b0af7f11ecb6b325899cb0fecc"><strong><span style="font-size: 18px; line-height: 120%;">4. Manage your data like a product</span></strong></a></h4>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 10px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="col1_p1_text" data-groupid="col1_p1" class="mobile_p1"><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/quantumblack/our-insights/how-to-unlock-the-full-value-of-data-manage-it-like-a-product?stcr=DE35C9D95F8C4AFBABB8F8197C95DABA&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd4&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=fac960f0df25433496d89fb25ef5d2ee&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="b2885fd0d2dd11ecb4335b6d0acc4209"><span style="font-size: 14px; line-height: 150%;">﻿When companies manage data like a consumer product—be it digital or physical—they can realize near-term value from their data investments and pave the way for quickly getting more value tomorrow. A data product delivers a high-quality, ready-to-use set of data that people across an organization can easily access and apply to different business challenges.</span></a></p>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 0px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="text_link_text" data-groupid="text_link" class="mobile_p1"><strong><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/quantumblack/our-insights/how-to-unlock-the-full-value-of-data-manage-it-like-a-product?stcr=DE35C9D95F8C4AFBABB8F8197C95DABA&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd5&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=81645fd83cdd434fb2a9a97894616d37&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="46af6550af7f11ecb6b325899cb0fecc"><span style="font-size: 14px; line-height: 150%;"><span style="line-height: 150%;">Read: <span style="text-decoration: underline; line-height: 150%;"><span style="color: rgb(34, 81, 255); line-height: 150%; text-decoration: underline;">How to unlock the full value of data? Manage it like a product﻿</span></span></span></span></a></strong></p>
+																	</td>
+																</tr>
+															</tbody></table>
+														</th>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal; width: 170px" class="colsplit topstack" width="170">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 4px 0px 0px 20px;" class="pad20b pad0l" data-groupid="img"><a data-managed-link="img_link_url" href="https://email.mckinsey.com/capabilities/quantumblack/our-insights/how-to-unlock-the-full-value-of-data-manage-it-like-a-product?stcr=DE35C9D95F8C4AFBABB8F8197C95DABA&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd6&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=ad2293d01b264b7c8477ba2635f58960&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" data-link-id="e1af4151aba711ec9cd17dc10c697280"><img agilecontent="true" src="https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/how%20to%20unlock%20the%20full%20value%20of%20data%20manage%20it%20like%20a%20product/digital-data-product-1536x1536.jpeg?mw=768&amp;car=16:9" alt="illustration corner of digital cube" width="170" height="auto" style="display: block;" border="0" class="wrap"></a></td>
+																</tr>
+															</tbody></table>
+														</th>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<!-- End MCK-004: Content | 2|3 --> </td></tr></tbody></table></td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-000: Spacer --><section id="1000" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td> <table role="presentation" width="100%" border="0" cellspacing="0"> <tbody><tr> <td height="20" align="left" valign="top" bgcolor="#FFFFFF" style="line-height: 0px; padding: 0px;"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height="20" style="display: block; height: 20px" border="0" alt=""></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-000: Spacer --> </td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#ffffff"><!-- Start MCK-004: Content | 2|3 -->
+				<section id="MCK004" layout-row="true">
+					<div layout-row="true">
+						<table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="wrap">
+							<tbody><tr layout-row="true">
+								<td>
+									<table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr>
+											<td align="left" valign="top" style="vertical-align: top; padding: 0px 20px 20px 20px; background-color: #ffffff;" bgcolor="#ffffff">
+												<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+													<tbody><tr>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal;" class="colsplit botstack">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 2px 0px 10px 0px;">
+																	<h4 style="font-size: 14px; mso-line-height-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; color: #000000; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="headline_text" data-groupid="headline" class="mobile_h4"><a style="color: #000000; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/master-data-management-the-key-to-getting-more-from-your-data?stcr=D4FF8351C55047179AC3D604BFCFF3B5&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd7&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=fb9a701f07d24c1891e3a6cfd4f5021b&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="e5e37522aba711ec9cd17dc10c697280"><span style="font-size: 18px; line-height: 120%;"><strong>5. Standardize data for a complete view of an organization</strong></span></a></h4>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 10px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="col1_p1_text" data-groupid="col1_p1" class="mobile_p1"><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/master-data-management-the-key-to-getting-more-from-your-data?stcr=D4FF8351C55047179AC3D604BFCFF3B5&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd8&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=2b8ceeb89a754c3f87417acc3f1b1d19&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="be8b7a60d2dd11ecb4335b6d0acc4209"><span style="font-size: 14px; line-height: 150%;">﻿Master data management (MDM) cleans, enriches, and streamlines data across business functions and systems to support processes, analyses, and smarter decision making. Successful MDM requires not only a willingness to consider technological solutions and tools, but also a commitment to change management.</span></a></p>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 0px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="text_link_text" data-groupid="text_link" class="mobile_p1"><strong><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/master-data-management-the-key-to-getting-more-from-your-data?stcr=D4FF8351C55047179AC3D604BFCFF3B5&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcd9&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=cee8e0e7515441efaf75f76f2a43317d&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="99f265f0af7f11ecb6b325899cb0fecc"><span style="font-size: 14px; line-height: 150%;"><span style="line-height: 150%;">Read: <span style="text-decoration: underline; line-height: 150%;"><span style="color: rgb(34, 81, 255); line-height: 150%; text-decoration: underline;">Master data management: The key to getting more from your data</span></span></span></span></a></strong></p>
+																	</td>
+																</tr>
+															</tbody></table>
+														</th>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal; width: 170px" class="colsplit topstack" width="170">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 4px 0px 0px 20px;" class="pad20b pad0l" data-groupid="img"><a data-managed-link="img_link_url" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/master-data-management-the-key-to-getting-more-from-your-data?stcr=D4FF8351C55047179AC3D604BFCFF3B5&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcda&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=7a9575c2c4fa49dba9d2cc34445c1a46&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" data-link-id="e5e37521aba711ec9cd17dc10c697280"><img agilecontent="true" src="https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/master%20data%20management%20the%20key%20to%20getting%20more%20from%20your%20data/gettyimages-545876023-ca-extended-thumb-1536x1536.png?mw=768&amp;car=16:9" alt="3D rendering of cubes tied up with rope - stock illustration" width="170" height="auto" style="display: block;" border="0" class="wrap"></a></td>
+																</tr>
+															</tbody></table>
+														</th>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<!-- End MCK-004: Content | 2|3 --> </td></tr></tbody></table></td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-000: Spacer --><section id="1000" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td> <table role="presentation" width="100%" border="0" cellspacing="0"> <tbody><tr> <td height="20" align="left" valign="top" bgcolor="#FFFFFF" style="line-height: 0px; padding: 0px;"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height="20" style="display: block; height: 20px" border="0" alt=""></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-000: Spacer --> </td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#ffffff"><!-- Start MCK-004: Content | 2|3 -->
+				<section id="MCK004" layout-row="true">
+					<div layout-row="true">
+						<table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="wrap">
+							<tbody><tr layout-row="true">
+								<td>
+									<table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr>
+											<td align="left" valign="top" style="vertical-align: top; padding: 0px 20px 20px 20px; background-color: #ffffff;" bgcolor="#ffffff">
+												<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+													<tbody><tr>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal;" class="colsplit botstack">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 2px 0px 10px 0px;">
+																	<h4 style="font-size: 14px; mso-line-height-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; color: #000000; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="headline_text" data-groupid="headline" class="mobile_h4"><a style="color: #000000; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/harnessing-the-power-of-external-data?stcr=31A56B55566A491AA58E624BB8B9FB1F&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcdb&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=5d1e003a931a405baf24eb665f29fa9b&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="d1f36760af7f11ecb6b325899cb0fecc"><strong><span style="font-size: 18px; line-height: 120%;">6. Leverage third-party data</span></strong></a></h4>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 10px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="col1_p1_text" data-groupid="col1_p1" class="mobile_p1"><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/harnessing-the-power-of-external-data?stcr=31A56B55566A491AA58E624BB8B9FB1F&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcdc&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=c7045a13cf024c91a8c2e842fc0186a7&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="c8caebf0d2dd11ecb4335b6d0acc4209"><span style="font-size: 14px; line-height: 150%;">﻿Organizations that stay abreast of the expanding external-data ecosystem and successfully integrate a broad spectrum of external data into their operations can outperform other companies by unlocking improvements in growth, productivity, and risk management.</span></a></p>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 0px 0px 0px 0px;">
+																	<p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="text_link_text" data-groupid="text_link" class="mobile_p1"><strong><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/harnessing-the-power-of-external-data?stcr=31A56B55566A491AA58E624BB8B9FB1F&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcdd&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=b3fc87acee0c462c95bb10a9f3d45905&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="e9269510af7f11ecb6b325899cb0fecc"><span style="font-size: 14px; line-height: 150%;"><span style="line-height: 150%;">Read: <span style="text-decoration: underline; line-height: 150%; color: rgb(34, 81, 255);">Harnessing the power of external data</span></span></span></a></strong></p>
+																	</td>
+																</tr>
+															</tbody></table>
+														</th>
+														<th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal; width: 170px" class="colsplit topstack" width="170">
+															<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+																<tbody><tr>
+																	<td align="left" valign="top" style="vertical-align: top; padding: 4px 0px 0px 20px;" class="pad20b pad0l" data-groupid="img"><a data-managed-link="img_link_url" href="https://email.mckinsey.com/capabilities/tech-and-ai/our-insights/harnessing-the-power-of-external-data?stcr=31A56B55566A491AA58E624BB8B9FB1F&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcde&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=7f18ba86b8454c92bebf63a774c4d1e4&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" data-link-id="ed0fb341aba711ec9cd17dc10c697280"><img agilecontent="true" src="https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/harnessing%20the%20power%20of%20external%20data/standard-harnessing-power.jpg?mw=768&amp;car=16:9" alt="Harnessing the power of external data" width="170" height="auto" style="display: block;" border="0" class="wrap"></a></td>
+																</tr>
+															</tbody></table>
+														</th>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</section>
+				<!-- End MCK-004: Content | 2|3 --> </td></tr></tbody></table></td></tr><tr><td bgcolor="#FFFFFF"><!-- Start 1-000: Spacer --><section id="1000" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr layout-row="true"> <td> <table role="presentation" width="100%" border="0" cellspacing="0"> <tbody><tr> <td height="20" align="left" valign="top" bgcolor="#FFFFFF" style="line-height: 0px; padding: 0px;"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height="20" style="display: block; height: 20px" border="0" alt=""></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-000: Spacer --> </td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#FFFFFF"><!-- Start 1-001: Divider --><section id="1001_divider" layout-row="true"><div layout-row="true"><table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> <tbody><tr> <td align="center" valign="top" style="padding: 0px 20px 20px 20px" class="pad20rl"> <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="wrap" bgcolor="#000000"> <tbody><tr> <td style="line-height: 1px !important" align="center" valign="top"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3f67ada7-a01e-4c02-ab71-8b46fd3106ae" height="1" style="display: block" border="0" alt=""></td> </tr> </tbody></table> </td> </tr> </tbody></table> </div> </section> <!-- End 1-001: Divider --> </td></tr><tr><td bgcolor="#ffffff"><!-- Start MCK-008: Footer | Logo + Social Icons -->
+    <section id="MCK008" layout-row="true">
+      <div layout-row="true">
+        <table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="wrap">
+          <tbody><tr layout-row="true">
+            <td><table role="presentation" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody><tr>
+                <td align="center" style="vertical-align: top; padding: 0px 20px 20px 15px; background-color: #ffffff;" bgcolor="#ffffff" class="pad20r pad15l"><table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody><tr>
+                      <td align="center" valign="top"><table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                          <tbody><tr>
+                            <th align="left" valign="middle" style="vertical-align: middle; padding: 0px; font-weight: normal; width: 245px" width="245" class="colsplit">
+                              
+                              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody><tr>
+                                  <td align="left" valign="top" class="pad16b" data-groupid="mck_logo"><a href="http://email.mckinsey.com/homefeed?__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bcdf&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=bWNraW5zZXkuY29t&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=89ca5b71545f4aa3b81cb2da6aefdfea&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" style="text-decoration: none;" data-managed-link="mck_logo_link_url" data-link-id="976397c0a3d911ecbdc86f280b15f1c8"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=3471f65a-13c6-4f67-af56-8135371fa1ba" width="146" alt="McKinsey &amp; Company" border="0" style="display: block; margin: 0; padding: 0;"></a></td>
+                                </tr>
+                              </tbody></table>
+                              
+                              </th>
+                            <th align="right" valign="middle" style="vertical-align: middle; padding: 0px; font-weight: normal;" class="colsplit left">
+                              
+                              <table role="presentation" border="0" cellspacing="0" cellpadding="0" class="wrap">
+                                <tbody><tr>
+                                  <td align="left" valign="middle" style="vertical-align: middle; text-align: left; padding: 0px 12px 0px 0px"><p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 120%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #000000; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="follow_text" data-groupid="follow" class="mobile_match"><a style="color: #000000; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/T/v710000019e6d662083a582a0f4bbc782e8/d6a447a39e1c46c80000021ef3a0bce0/d6a447a3-9e1c-46c8-9344-46f0ad18ab81?__dU__=v0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz" target="_blank" rel="noopener" data-link-id="b13254c0d17411ecbe8c0fc7ab484278"><span style="font-size: 14px; line-height: 120% !important;"><strong>Follow our thinking</strong></span></a></p></td>
+                                  
+                                  <td align="right" valign="top"><table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                      <tbody><tr>
+                                        <td align="left" valign="middle" style="padding: 0px 10px 0px 0px" data-groupid="linked_logo"><a data-managed-link="linked_logo_link_url" href="https://email.mckinsey.com/T/v710000019e6d662083a582a0f4bbc782e8/d6a447a39e1c46c80000021ef3a0bce1/d6a447a3-9e1c-46c8-9344-46f0ad18ab81?__dU__=v0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=v0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF0G1259ZAW1Zj_UalJpFN4gjYScUNORveqqWdlNB49cPBS5o8DWw7zWFBQn1_NfoyihezoN_RS3YaWTOGTUNh6n6DhLJAN4k07dA895J5y6i8O4ZTPSdmJRS82CfrE5z_PQbTOLK6KxPULwWg3C1klIQXVTh5_6dAUExLLWuObglMM6OfK_NwIF6EWDGb1vVQZw2P1dyMkw81QvCcLXdu8ORoEtnnkxxguGcYYkqjFrAJR8-DOn0YxOJVkSL-nakegYaMZvPmBLwQwmx7-WLv21lmavm8O3ORkVN7p4xkhytkXZP8ZGfrESPt2sG63kYxpaT9t1kyWhXy1s7SnQi5LcykJgKHxYLjNPJdkMt5C_y3hcrfeuKeGJpZtsbM2muduKUKgFROBpaOSEJRMY51o_LrrXKxyte6fKvKoMzedjWlYko3ahffouWhs_cHWFnXtWRVwEniiTeGjIiZPhLfb8=" target="_blank" style="text-decoration: none; outline: none; color: #000001" data-link-id="976397c1a3d911ecbdc86f280b15f1c8"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=61db3abb-5906-44c8-a258-8ab3de689535" width="32" alt="LinkedIn" border="0" style="display: block; margin: 0; padding: 0;"></a></td>
+                                        <td align="left" valign="middle" style="padding: 0px 10px 0px 0px" data-groupid="twitter_logo"><a data-managed-link="twitter_logo_link_url" href="https://email.mckinsey.com/T/v710000019e6d662083a582a0f4bbc782e8/d6a447a39e1c46c80000021ef3a0bce2/d6a447a3-9e1c-46c8-9344-46f0ad18ab81?__dU__=v0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=v0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_1P8SSwvgaM7Bj1wKVct32A076AqyU2wgVXHYwfm4TdSLSEWejcKq6kHvQBZg1oZwFdJTh0zTarcVFzT38OD6IKcCFFywzWrRdF1pdRXu1r-MKbJdKUIgZlquUxJcu2I9zZ_LebdJKpM-DMvZ66ke7CFg-f1aGJMdJgNNy3ZbW3s5UUi5USFggLXI6WJQebpK1zOxQZHXnIE7Een3ykLFxMbAy3LoCE4Is_BozgejRmk2U6M-ZQ8fy3Uqu8zzQHRDfau41H2D1EjOlLPWXc6q70vzQBH8jSYHSVw9S3wYUwddUaJFYEZ1xEGIKfn1No5ofGLfypOjV7So-LCI8afXHFlxFvscatw6JvHntkdjCsxSCR7S9XxttqHhsyMRDzuVCeLf7I6TFHoPyKh-UdeD0706Fr9ov6pzRpJj6A2Z7yl1wekQDlSSd6G8aErxl4l33WtU1B7Cua5A==" target="_blank" style="text-decoration: none; outline: none; color: #000001" data-link-id="976397c2a3d911ecbdc86f280b15f1c8"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=635dc295-1b62-47cc-b9ae-f84b32d8f240" width="32" alt="Twitter" border="0" style="display: block; margin: 0; padding: 0;"></a></td>
+                                        <td align="left" valign="middle" style="padding: 0px" data-groupid="fb_logo"><a data-managed-link="fb_logo_link_url" href="https://email.mckinsey.com/T/v710000019e6d662083a582a0f4bbc782e8/d6a447a39e1c46c80000021ef3a0bce3/d6a447a3-9e1c-46c8-9344-46f0ad18ab81?__dU__=v0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=v0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF9OJQbzKjWJqjvxdDSaKpQaqlnZTQePXDwUuaPA1sO81hQUJ9fzX6MooXs6Df0Ut2Glkzhk1DYep-g4SyQDeJNO3QPPeSecuovDuGUz0nZiUUvNgn6xOc_z0G0ziyuisT1C8FoNwtZJSEF1U4ef-nQFBMSy1rjm4JTDOjnyvzcCBZPOskeLCj6mbLCk5iTXAYtdiA-awdr4MhZ0wfzRCQAvdCIYhEHXX2iUfPgzp9GMTiVZEi_p2pHoGGjGbz5gS8EMJse_li79tZZmr5vDtzkZFTe6eMZIcrZF2T_GRn6xEj7drBut5GMaWk_bdZMloV8tbO0p0IuS3MpCYCh8WC4zTyXZDLeQv8t4XK33rinhiaWbbGzNprnbilCoBUTgaWjkhCUTGOdaPpNSAPZVYG1xeiWOb0RvRL7CHJCImYxAl45NnYxNaXXABXlvw6W8zbxoyImT4S32_" target="_blank" style="text-decoration: none; outline: none; color: #000001" data-link-id="976397c3a3d911ecbdc86f280b15f1c8"><img src="https://images.harmony.epsilon.com/ContentHandler/images?id=05b3d1f4-748b-4451-be05-2527eafa544d" width="32" alt="Facebook" border="0" style="display: block; margin: 0; padding: 0;"> </a></td>
+                                      </tr>
+                                    </tbody></table></td>
+                                  
+                                </tr>
+                              </tbody></table>
+                              
+                              </th>
+                          </tr>
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table></td>
+          </tr>
+        </tbody></table>
+		
+		  
+      </div>
+    </section>
+    <!-- End MCK-008: Footer | Logo + Social Icons --> </td></tr></tbody></table></td></tr><tr><td><table role="presentation" bgcolor="#FFFFFF" width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="wrap"><tbody><tr><td bgcolor="#ffffff"><!-- START MCK-007: Footer | App Store -->
+        <section id="MCK007" layout-row="true">
+          <div layout-row="true">
+            <table layout-row="true" role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" class="wrap">
+              <tbody><tr layout-row="true">
+                <td valign="top"><table class="wrap" align="center" width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                    <tbody><tr>
+                      <td align="center" style="vertical-align: top; padding: 0px 0px 20px 0px;" bgcolor="#ffffff" class="pad20rl"><table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tbody><tr>
+                            <td align="left" valign="top" style="vertical-align: top; padding: 0px 20px 0px 20px;" class="pad0rl"><table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody><tr>
+                                  <th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal; width: 285px" class="colsplit" width="285"> <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                      <tbody><tr>
+                                        <td class="pad0r" align="left" valign="top" style="vertical-align: top; padding: 0px 25px 0px 0px;"><p style="font-size: 14px; mso-line-height-rule: exactly; line-height: 150%; margin: 0px; font-weight: normal; letter-spacing: 0px; text-transform: none; color: #333333; font-family: Helvetica, Arial, sans-serif;" enable-personalization="true" data-richtext="col1_p1_text" data-groupid="col1_p1" class="mobile_match"><a style="color: #333333; text-decoration: none; font-weight: inherit;" href="https://email.mckinsey.com/about-us/overview/mckinsey-insights-app?__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bce4&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=d3d3Lm1ja2luc2V5LmNvbQ==&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=02b5256be6614d9897db9a91fd5b08a9&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" rel="noopener" data-link-id="b7fe4a70d17411ecbe8c0fc7ab484278"><span style="font-size: 14px; color: #000000; line-height: 150%;"><strong>McKinsey Insights</strong> - Get our latest thinking on your iPhone, iPad, or Android.﻿</span></a></p></td>
+                                      </tr>
+                                    </tbody></table>
+                                  </th>
+                                  <th align="left" valign="top" style="vertical-align: top; padding: 0px; font-weight: normal;" class="colsplit"> <table role="presentation" border="0" cellspacing="0" cellpadding="0" align="right" class="wrap">
+                                      <tbody><tr>
+                                        <td align="left" valign="top" class="pad20t" style="padding: 4px 0px 0px 0px;"><table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody><tr>
+                                              <td align="left" valign="top" style="vertical-align: top; padding: 0px" data-groupid="appStore"> <a data-managed-link="appStore_link_url" href="https://email.mckinsey.com/app/apple-store/id674902075?pt=1151701&ct=mck-eml_app-store-badge&mt=8&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bce5&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=YXBwcy5hcHBsZS5jb20=&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=0b243b468a7147bc96f25c9f326cf483&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" data-link-id="8f115031a3d911ecbdc86f280b15f1c8"><img agilecontent="true" src="https://images.harmony.epsilon.com/ContentHandler/images?id=38623190-c4fe-11ed-b6f5-9b0d798d20fb" alt="Download on the App Store" width="120" height="auto" style="display: block;" border="0"> </a> </td>
+                                              <td width="15" align="left" valign="top" style="vertical-align: top; padding: 0px; width: 15px; font-size: 2px; line-height: 0px;">&nbsp;</td>
+                                              <td align="left" valign="top" style="vertical-align: top; padding: 0px" data-groupid="googleStore"><a data-managed-link="googleStore_link_url" href="https://email.mckinsey.com/store/apps/details?id=com.mckinsey.mckinseyinsights&referrer=utm_source%3Dmck-eml%26utm_campaign%3Dmck-eml_app-store-badge&__hScId__=v710000019e6d662083a582a0f4bbc782e8&__hRlId__=d6a447a39e1c46c80000021ef3a0bce6&__hDId__=d6a447a3-9e1c-46c8-9344-46f0ad18ab81&__hSD__=cGxheS5nb29nbGUuY29t&cid=mgp_opr-eml-gui-probguide-mgp-glb--em_1&hlkid=62cdb343513e44faaa4d84f1f754c919&hctky=17223831&hdpid=d6a447a3-9e1c-46c8-9344-46f0ad18ab81" target="_blank" data-link-id="8f115032a3d911ecbdc86f280b15f1c8"><img agilecontent="true" src="https://images.harmony.epsilon.com/ContentHandler/images?id=b52ee4c0-c4fe-11ed-8207-4998fe8262ff" alt="ANDROID APP ON Google play" width="134" height="auto" style="display: block;" border="0"> </a> </td>
+                                            </tr>
+                                          </tbody></table></td>
+                                      </tr>
+                                    </tbody></table>
+                                  </th>
+                                </tr>
+                              </tbody></table></td>
+                          </tr>
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+          </div>
+        </section>
+        <!-- End MCK-007: Footer | App Store --> </td></tr></tbody></table></td></tr><tr><td align="center" style="font-size:14px"><!-- Start Footer - Risk - HTML -->
+<table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td bgcolor="#F0F0F0"><table role="presentation" class="wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td style="padding: 26px 20px 10px 20px" class="pad20rl" align="left"><p style="font-size: 12px; mso-line-height-rule: exactly; line-height: 130%; margin: 0px; font-weight: normal; color: #757575; font-family: Helvetica, Arial, sans-serif">This email contains information about McKinsey&rsquo;s research, insights, services, or events. By opening our emails or clicking on links, you agree to our use of cookies and web tracking technology. For more information on how we use and protect your information, please review our <a href="https://email.mckinsey.com/T/v710000019e6d662083a582a0f4bbc782e8/d6a447a39e1c46c80000021ef3a0bce7/d6a447a3-9e1c-46c8-9344-46f0ad18ab81?__dU__=v0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=v0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQFzGdi2cn1iU7KJEa5whIrwZcgBGG0TPafzZjdsyV3hB6TsAY9yft30XUBxsjtje_R5v9fcf7wmIhSVHuklyh7UvAmTMwtsh4bcLthPEdPGn2jF6qVlFViVlEBoXGUGxlMAj4GKzW_BQWIxtyn1yrKa7duQg_PSy_xy06CyeU3NmQ1RVZsUYXUWmH34ht5ZFdgOI_iKHGFnMOAm8GRspMWEVQ83q0z6OuBAWfI-ideysJfYbqgXH3R3dH3BJHLI9OQdSuaZUJIJJVzcVHXWfmwdeVlMyyE2Vl0AYO78awXN6n6pJqmWPpuhpe0e2_dLD0KT6FRxQDKUlIxiqvkTKJ2WuHp5X2ztxlgEL11jJj7x_wwpW0wzuPq_p8HC5mnn5cYx7FWg_afvbzZb26tc-5uk8xNxSppTU9n0erQG-WfUs75L1fEBxIBQj-MY5ZVNEzaccubat0bkyLRadAeXRimMs=" target="_blank" style="text-decoration: underline; color: #757575;"><span class="linkunder">privacy policy</span></a>.</p></td>
+          </tr>
+        </tbody>
+      </table></td>
+  </tr>
+  <tr>
+    <td bgcolor="#F0F0F0"><table role="presentation" class="wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td style="padding: 0px 20px 10px 20px" class="pad20rl" align="left"><p style="font-size: 12px; mso-line-height-rule: exactly; line-height: 130%; margin: 0px; font-weight: normal; color: #757575; font-family: Helvetica, Arial, sans-serif">You received this email because you subscribed to “The McKinsey Publishing Guide to problem solving.”</p></td>
+          </tr>
+        </tbody>
+      </table></td>
+  </tr>
+  <tr>
+    <td bgcolor="#F0F0F0"><table role="presentation" class="wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td style="padding: 0px 20px 10px 20px" class="pad20rl" align="left"><p style="font-size: 12px; mso-line-height-rule: exactly; line-height: 130%; margin: 0px; font-weight: normal; font-family: Helvetica, Arial, sans-serif; color: #757575"><a style="color:#757575; text-decoration: underline;" href="https://email.mckinsey.com/T/v710000019e6d662083a582a0f4bbc782e8/d6a447a39e1c46c80000021ef3a0bce8/d6a447a3-9e1c-46c8-9344-46f0ad18ab81?__dU__=v0G4RBKTXg2GsTlMa8YbE0npiPHb7Gzq29ujr-mrJsl6bcn0E30HNSquNCCrd1XNAz&__F__=v0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQFzGdi2cn1iU7KJEa5whIrwaATePgETgXaYi6J2tbCGBqYj85pz5zjmhkbOWsZI5uGBjag9BBVASHwWYkm-P8fn4jbQxN9px-c7SEWejcKq6kHvQBZg1oZwFdJTh0zTarcVFzT38OD6IKcCFFywzWrRdF1pdRXu1r-MKbJdKUIgZlquUxJcu2I9zZ_LebdJKpM-DMvZ66ke7CFg-f1aGJMdJgNNy3ZbW3s5UUi5USFggLbicZKsCFnZYzdvLiMdX_UsORoYRVg1bQ6jR4Jmg6OQ37EU3eh8T91mU6M-ZQ8fy3Uqu8zzQHRDfau41H2D1EjOlLPWXc6q70vzQBH8jSYHSVw9S3wYUwddUaJFYEZ1xEGIKfn1No5ofGLfypOjV7So-LCI8afXHFlxFvscatw6JvHntkdjCsxSCR7S9XxttqHhsyMRDzuVCeLf7I6TFHoAIptONEfKA5nMGmZ8pHgmT8KKAKLyhHJtlVtkXtC7nVa_ND3cKatHPWtU1B7Cua5A==" target="_blank"><strong style="color:#757575; text-decoration: underline; font-weight: normal">Manage&nbsp;subscriptions</strong></a>&nbsp;<span style="color:#757575;">|</span>&nbsp;<a style="color:#757575; text-decoration: underline;" href="https://email.mckinsey.com/U/v710000019e6d662083a582a0f4bbc782e8/d6a447a39e1c46c80000021ef3a0bce9" target="_blank"><strong  style="color:#757575; text-decoration: underline; font-weight: normal">Unsubscribe</strong></a></p></td>
+          </tr>
+        </tbody>
+      </table></td>
+  </tr>
+  <tr>
+    <td bgcolor="#F0F0F0"><table role="presentation" class="wrap" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td style="padding: 0px 20px 26px 20px" class="pad20rl" align="left"><p style="font-size: 12px; mso-line-height-rule: exactly; line-height: 130%; margin: 0px; font-weight: normal; color: #757575; font-family: Helvetica, Arial, sans-serif">Copyright ©&nbsp;2026 | McKinsey&nbsp;&amp;&nbsp;Company, 3&nbsp;World&nbsp;Trade&nbsp;Center, 175&nbsp;Greenwich&nbsp;Street, New&nbsp;York, NY 10007</p></td>
+          </tr>
+        </tbody>
+      </table></td>
+  </tr>
+</table>
+<!-- End Footer - Risk - HTML -->
+
+</td></tr></tbody></table>
+
+							<!--END Email Size Wrapper Table -->
+
+                        </td>
+                    </tr>
+                </table>
+
+                <!--END Email Background Color Table -->
+
+            </td>
+        </tr>
+	</table>
+    </div>
+	<!--END Page Overflow Color Table -->
+
+    
+</body>
+</html>
