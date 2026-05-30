@@ -1,4 +1,3 @@
-
 import requests
 
 import os
@@ -117,7 +116,7 @@ for msg in messages[::]:
       result = f.readlines()
     Emaillist = " ".join(map(str, result))
 
-    if detail["from_email"] in emailwhitelist and emailinfo not in Emaillist : #and "Confirm".casefold() not in emailinfo.casefold() and "訂閱".casefold() not in emailinfo.casefold() and "登録確定".casefold() not in emailinfo.casefold()  and "Welcome".casefold() not in emailinfo.casefold() :
+    if detail["from_email"] in emailwhitelist and emailinfo not in Emaillist:
 
 
       # 使用 'a' 模式開啟檔案，若檔案不存在則會自動建立
@@ -507,6 +506,17 @@ TEMPLATE = r"""<!DOCTYPE html>
   .filter.active { background: var(--ink); color: var(--paper); }
   .filter .n { font-family: var(--display); font-size: 13px; opacity: .7; }
 
+  /* 折疊式篩選 */
+  aside h3.fold { display: flex; align-items: baseline; cursor: pointer; user-select: none; }
+  aside h3.fold .cur {
+    margin-left: auto; font-size: 12px; letter-spacing: .02em; text-transform: none;
+    color: var(--accent); font-weight: 600; max-width: 9em; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap;
+  }
+  aside h3.fold .chev { margin-left: 8px; font-size: 11px; color: var(--ink-faint); transition: transform .2s; }
+  aside h3.fold.open .chev { transform: rotate(180deg); }
+  .deskwrap.collapsed { display: none; }
+
   /* ── 條目列表 ─────────────────────── */
   .feed { min-height: 50vh; }
   article.entry {
@@ -616,10 +626,10 @@ TEMPLATE = r"""<!DOCTYPE html>
 
   <div class="layout">
     <aside>
-      <h3>研究領域</h3>
-      <div class="deskwrap" id="topicFilters"></div>
-      <h3>情報來源</h3>
-      <div class="deskwrap" id="sourceFilters"></div>
+      <h3 class="fold" data-target="topicFilters">研究領域<span class="cur" id="topicCur">全部</span><span class="chev">▾</span></h3>
+      <div class="deskwrap collapsed" id="topicFilters"></div>
+      <h3 class="fold" data-target="sourceFilters">情報來源<span class="cur" id="sourceCur">全部</span><span class="chev">▾</span></h3>
+      <div class="deskwrap collapsed" id="sourceFilters"></div>
     </aside>
     <main class="feed" id="feed"></main>
   </div>
@@ -677,6 +687,8 @@ function renderFilterGroup(sel, counts, key) {
     state[key] = btn.dataset.val || null;
     box.querySelectorAll(".filter").forEach(x => x.classList.remove("active"));
     btn.classList.add("active");
+    const cur = document.getElementById(key + "Cur");
+    if (cur) cur.textContent = btn.dataset.val || "全部";
     render();
   });
 }
@@ -777,6 +789,12 @@ $("#q").addEventListener("input", (e) => { state.q = e.target.value; render(); }
 $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
 
 buildFilters();
+document.querySelectorAll("aside h3.fold").forEach(h => {
+  h.addEventListener("click", () => {
+    document.getElementById(h.dataset.target).classList.toggle("collapsed");
+    h.classList.toggle("open");
+  });
+});
 render();
 </script>
 </body>
@@ -820,8 +838,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
