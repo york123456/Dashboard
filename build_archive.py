@@ -1,235 +1,153 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Gmail API 版本：與原 Mailtrap 腳本的「輸入 / 輸出 / 流程」對齊。
-
-對齊重點：
-1. 白名單仍由環境變數 emailwhitelist 控制，並沿用原版「子字串比對」+「去重」邏輯。
-2. 輸出檔案完全相同：
-   - ./log/Email.list        逐行 JSON：{id, sent_at, subject, from_name, from_email}
-   - ./log/EmailOperate.log  只建立、不寫入（與原版相同）
-   - ./storage/{id}.html     信件 HTML 內文
-3. 主控台訊息沿用原版字串（檔案建立、白名單載入、下載成功、分隔線）。
-4. 結尾組出 id_list。
-
-與原版必然不同之處：
-- 認證由 OAuth（token.json + client secret）取代 Mailtrap 的 API_TOKEN / SANDBOX_ID。
-- HTML 來源由 payload 內的 text/html part 解碼取得，而非 html_source_path 連結下載。
-"""
+import requests
 
 import os
 import sys
-import json
-import base64
-import re
-from datetime import datetime, timezone
-from email.utils import parseaddr, parsedate_to_datetime
 
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
-from bs4 import BeautifulSoup
-
-# Gmail 僅需讀取權限即可下載信件內容；若修改 SCOPES 請刪除 token.json
-SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
-#credentials_path = "client_secret_{}.apps.googleusercontent.com.json"
+file_path = "./log/Email.list"
+# 檢查檔案是否存在，如果沒有的話就創建
+if not os.path.exists(file_path):
+    open(file_path, 'w').close()
+    print("檔案已建立！")
+else:
+    print("檔案已經存在。")
 
 
+file_path = "./log/EmailOperate.log"
 
-CREDENTIALS_INFO=os.getenv("CREDENTIALS_INFO")
-
-#token_path = "token.json"
-TOKEN_INFO=os.getenv("TOKEN_INFO")
-
-# ==========================================================
-# 1) 確認輸出檔案 / 資料夾存在（對應原版 log 檔建立邏輯）
-# ==========================================================
-os.makedirs("./log", exist_ok=True)
-os.makedirs("./storage", exist_ok=True)
-
-for file_path in ("./log/Email.list", "./log/EmailOperate.log"):
-    # 檢查檔案是否存在，如果沒有的話就創建
-    if not os.path.exists(file_path):
-        open(file_path, "w").close()
-        print("檔案已建立！")
-    else:
-        print("檔案已經存在。")
+# 檢查檔案是否存在，如果沒有的話就創建
+if not os.path.exists(file_path):
+    open(file_path, 'w').close()
+    print("檔案已建立！")
+else:
+    print("檔案已經存在。")
 
 
-# ==========================================================
-# 2) 讀取環境變數 emailwhitelist（與原版完全相同）
-# ==========================================================
+
 # 使用 os.environ.get 安全讀取環境變數
 api_key = os.environ.get("emailwhitelist")
+
 if not api_key:
     print("錯誤：找不到環境變數 emailwhitelist", file=sys.stderr)
     sys.exit(1)
+
+
 # 在此處安全地使用您的 api_key
 print("成功載入 emailwhitelist")
-emailwhitelist = api_key
+
+emailwhitelist= api_key
 
 
-# ==========================================================
-# 工具函式
-# ==========================================================
-def get_html_part(payload):
-    """遞迴尋找 email payload 中的 text/html part，回傳其 base64 資料。"""
-    if payload.get("mimeType") == "text/html":
-        return payload.get("body", {}).get("data")
-    if "parts" in payload:
-        for part in payload["parts"]:
-            html_data = get_html_part(part)
-            if html_data:
-                return html_data
-    return None
+
+# 使用 os.environ.get 安全讀取環境變數
+api_key = os.environ.get("API_TOKEN")
+
+if not api_key:
+    print("錯誤：找不到環境變數 API_TOKEN", file=sys.stderr)
+    sys.exit(1)
 
 
-def extract_sent_at(detail, headers_map):
-    """對應原版 sent_at：優先用 Date header，否則退回 internalDate。"""
-    date_raw = headers_map.get("date", "")
-    if date_raw:
-        try:
-            return parsedate_to_datetime(date_raw).isoformat()
-        except Exception:
-            return date_raw
-    internal = detail.get("internalDate")
-    if internal:
-        return datetime.fromtimestamp(int(internal) / 1000, tz=timezone.utc).isoformat()
-    return ""
+# 在此處安全地使用您的 api_key
+print("成功載入 API_TOKEN")
 
 
-def get_credentials():
-   """OAuth 流程：取代原版的 API_TOKEN / SANDBOX_ID。"""
+API_TOKEN = api_key
 
-   if isinstance(TOKEN_INFO, str):
-         token_data = json.loads(TOKEN_INFO)
-   else:
-         token_data = TOKEN_INFO
 
-   
-   
-   creds = Credentials.from_authorized_user_info(token_data, SCOPES)
+# 使用 os.environ.get 安全讀取環境變數
+api_key = os.environ.get("SANDBOX_ID")
+
+if not api_key:
+    print("錯誤：找不到環境變數 SANDBOX_ID", file=sys.stderr)
+    sys.exit(1)
+
+
+# 在此處安全地使用您的 api_key
+print("成功載入 SANDBOX_ID")
+
+
+
+SANDBOX_ID = api_key
+
+
+BASE = "https://mailtrap.io/api"
+
+headers = {"Api-Token": API_TOKEN}
+
+# 1) 先列出符合條件的信
+#params = {"search": "test"}   # 可用 subject / to_email / to_name
+
+#params = {"search": ""}   # 可用 subject / to_email / to_name
+
+params={}
+
+messages = requests.get(
+    f"{BASE}/sandboxes/{SANDBOX_ID}/messages",
+    headers=headers,
+    params=params,
+).json()
+
+#print(messages)
+
+import json
+
+
+# 2) 取前幾封，進一步抓單封內容
+for msg in messages[::]:
+    detail = requests.get(
+        f"{BASE}/sandboxes/{SANDBOX_ID}/messages/{msg['id']}",
+        headers=headers,
+    ).json()
+
     
-   return creds
+
+    # 直接挑選需要的欄位組成新的字典，並轉為 JSON 字串
+    result = {
+        "id": detail["id"],
+        "sent_at": detail["sent_at"],
+        "subject": detail["subject"],
+        "from_name": detail["from_name"],
+        "from_email": detail["from_email"]
+    }
+
+    emailinfo = json.dumps(result, ensure_ascii=False)
 
 
-def list_all_messages(service, query):
-    """列出所有符合條件的信件（含分頁），對應原版抓 sandbox 全部訊息。"""
-    messages = []
-    next_page_token = None
-    while True:
-        results = service.users().messages().list(
-            userId="me",
-            q=query,
-            pageToken=next_page_token,
-        ).execute()
-        messages.extend(results.get("messages", []))
-        next_page_token = results.get("nextPageToken")
-        if not next_page_token:
-            break
-    return messages
+    with open('./log/Email.list', 'r', encoding='utf-8') as f:
+      result = f.readlines()
+    Emaillist = " ".join(map(str, result))
+
+    if detail["from_email"] in emailwhitelist and emailinfo not in Emaillist:
 
 
-# ==========================================================
-# 主流程
-# ==========================================================
-def update_emailbox():
-    creds = get_credentials()
-    service = build("gmail", "v1", credentials=creds)
+      # 使用 'a' 模式開啟檔案，若檔案不存在則會自動建立
+      with open("./log/Email.list", "a", encoding="utf-8") as file:
+          file.write(emailinfo + "\n")  # 寫入文字並加上換行符號
+ 
 
-    # 由 emailwhitelist 字串擷取出信箱，組成 Gmail 搜尋語法以縮小掃描範圍；
-    # 真正的過濾仍交給下方的子字串比對，行為與原版一致。
-    whitelist_emails = re.findall(r"[\w.+-]+@[\w-]+\.[\w.-]+", emailwhitelist)
-   
-    print('whitelist_emails',whitelist_emails)
-    
-    if whitelist_emails:
-        search_query = " OR ".join(f"from:{e}" for e in whitelist_emails)
-    else:
-        search_query = ""
+      html_content = requests.get(f"{BASE.strip("api")}/{detail["html_source_path"]}")
 
-    messages = list_all_messages(service, search_query)
+      response = html_content
 
-    # 逐封取詳細內容（對應原版 for msg in messages[::]，處理全部、不限筆數）
-    for msg in messages[::]:
-        detail = service.users().messages().get(
-            userId="me",
-            id=msg["id"],
-            format="full",
-        ).execute()
+      
+      with open(f'./storage/{detail["id"]}.html', 'wb') as file:
+              file.write(response.content)
+      print("檔案下載成功！")
 
-        payload = detail.get("payload", {})
-        headers_map = {h["name"].lower(): h["value"] for h in payload.get("headers", [])}
-
-        subject = headers_map.get("subject", "")
-        from_name, from_email = parseaddr(headers_map.get("from", ""))
-        sent_at = extract_sent_at(detail, headers_map)
-
-        # 直接挑選需要的欄位組成新的字典，並轉為 JSON 字串（欄位與原版相同）
-        result = {
-            "id": detail["id"],
-            "sent_at": sent_at,
-            "subject": subject,
-            "from_name": from_name,
-            "from_email": from_email,
-        }
-        emailinfo = json.dumps(result, ensure_ascii=False)
-
-        with open("./log/Email.list", "r", encoding="utf-8") as f:
-            existing = f.readlines()
-        Emaillist = " ".join(map(str, existing))
-
-        # 白名單（子字串比對）+ 去重，與原版相同；
-        # 多加 from_email 非空判斷，避免空字串恆為白名單成員的隱性 bug。
-        if from_email and from_email in emailwhitelist and emailinfo not in Emaillist:
-            # 使用 'a' 模式開啟檔案，若檔案不存在則會自動建立
-            with open("./log/Email.list", "a", encoding="utf-8") as file:
-                file.write(emailinfo + "\n")  # 寫入文字並加上換行符號
-
-            # 取得 HTML 內文（取代原版的 html_source_path 下載）
-            html_b64 = get_html_part(payload)
-            if html_b64:
-                html_content = base64.urlsafe_b64decode(html_b64).decode("utf-8", errors="replace")
-            else:
-                html_content = ""
-
-                     
-         
-            soup = BeautifulSoup(html_content, 'html.parser')
-            
-            # 1. 移除 Gmail 自動生成的轉寄屬性區塊 (包含寄件者、日期、主旨等標頭文字)
-            # 這是最關鍵的一步，gmail_attr 專門存放那些 "---------- Forwarded message ---------" 的文字
-            for header in soup.find_all(class_="gmail_attr"):
-              header.decompose()
-            
-            # 2. (選配) 移除標頭上方的多餘換行 <br/>，讓排版更緊湊
-            # 我們只移除 gmail_quote 內部的開頭換行
-            quote_container = soup.find(class_="gmail_quote")
-            if quote_container:
-              for br in quote_container.find_all("br", recursive=False):
-                  br.decompose()
-            
-            # 3. 取得清理後的 HTML
-            # 如果您要儲存成檔案，使用 soup.encode()
-            clean_html = soup.prettify()
-          
+      print('=================')
 
 
-           
+with open('./log/Email.list', 'r', encoding='utf-8') as f:
+      result = f.readlines()
 
-            with open(f"./storage/{detail['id']}.html", "w", encoding="utf-8") as file:
-                file.write(clean_html)
-            print("檔案下載成功！")
-            print("=================")
 
-    # 迴圈結束後重讀 Email.list，組出 id_list（與原版相同）
-    with open("./log/Email.list", "r", encoding="utf-8") as f:
-        result = f.readlines()
-    id_list = [json.loads(line)["id"] for line in result if line.strip()]
-    # print(id_list)
-    return id_list
+#print(result)
+
+
+
+# 使用列表推導式：遍歷 result 中的每個字串，轉成字典後提取 "id"
+id_list = [json.loads(line)["id"] for line in result if line.strip()]
+
+#print(id_list)
 
 
 
@@ -919,10 +837,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        update_emailbox()
-    except HttpError as error:
-        print(f"Gmail API 發生錯誤：{error}", file=sys.stderr)
-        sys.exit(1)
-        
     main()
